@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/kotak_putih2"
+    android:id="@+id/cl_view">
+
+    <ImageView
+        android:id="@+id/iv_transporter_rekomendasi"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_nama_perusahaan"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="Truk CDD Bak"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/iv_transporter_rekomendasi"
+        app:layout_constraintTop_toTopOf="@id/iv_transporter_rekomendasi"
+        app:layout_constraintBottom_toBottomOf="@id/iv_transporter_rekomendasi"/>
+
+    <TextView
+        android:id="@+id/tv_status_pembayaran"
+        app:layout_constraintTop_toTopOf="@id/iv_transporter_rekomendasi"
+        app:layout_constraintEnd_toEndOf="@id/garis_putus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menunggu Pembayaran"
+        android:textSize="12sp"
+        android:textColor="#1D71B8"/>
+
+    <TextView
+        android:id="@+id/tv_tanggal"
+        app:layout_constraintTop_toBottomOf="@id/tv_status_pembayaran"
+        app:layout_constraintEnd_toEndOf="@id/garis_putus"
+        app:layout_constraintBottom_toBottomOf="@id/iv_transporter_rekomendasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20 Jan 2022" />
+
+    <View
+        android:id="@+id/garis_putus"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/garis_putus_putus"
+        app:layout_constraintTop_toBottomOf="@id/iv_transporter_rekomendasi" />
+
+    <LinearLayout
+        android:id="@+id/judul"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="90"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintTop_toBottomOf="@id/garis_putus">
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="30">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dari:" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="30">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menuju:" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="30">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Barang:" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="90"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintTop_toBottomOf="@id/judul"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="30">
+
+            <ImageView
+                android:id="@+id/iv_location"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/location"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/tv_asal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DKI Jakarta"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="30">
+
+            <ImageView
+                android:id="@+id/iv_yourlocation"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/your_location"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/tv_tujuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jawa Barat"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="30">
+
+            <TextView
+                android:id="@+id/tv_nama_barang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mesin Genset"
+                android:layout_gravity="center"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

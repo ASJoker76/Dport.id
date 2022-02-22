@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/rectangle_4"
+    android:layout_marginBottom="10dp">
+
+    <ImageView
+        android:id="@+id/iv_transporter_rekomendasi"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/image_truk"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_nama_perusahaan"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/iv_transporter_rekomendasi"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="Truk CDD Bak"/>
+
+
+    <TextView
+        android:id="@+id/tv_tujuan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tv_nama_perusahaan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="#1D71B8"
+        android:text="Rp. 200.000"
+        android:textSize="12sp"
+        android:textStyle="bold"/>
+
+    <View
+        android:id="@+id/garis_putus"
+        app:layout_constraintTop_toBottomOf="@id/iv_transporter_rekomendasi"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/garis_putus_putus"
+        />
+
+    <TextView
+        android:id="@+id/judul_armada"
+        app:layout_constraintTop_toBottomOf="@id/garis_putus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="13dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:text="Dimensi :"
+        android:textAppearance="@style/recipient_s"
+        android:gravity="top"
+        />
+
+    <TextView
+        android:id="@+id/tv_armada"
+        app:layout_constraintTop_toBottomOf="@id/garis_putus"
+        app:layout_constraintStart_toEndOf="@id/judul_armada"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="13dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:text="170cm x 200cm x 420cm"
+        android:textAppearance="@style/recipient_s"
+        android:gravity="top"
+        />
+
+    <TextView
+        android:id="@+id/judul_jangkauan"
+        app:layout_constraintTop_toBottomOf="@id/garis_putus"
+        app:layout_constraintEnd_toStartOf="@id/tv_jangkauan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="13dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Muatan :"
+        android:textAppearance="@style/recipient_s"
+        android:gravity="top"
+        />
+
+    <TextView
+        android:id="@+id/tv_jangkauan"
+        app:layout_constraintTop_toBottomOf="@id/garis_putus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="13dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="34dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:text="4.000kg"
+        android:textAppearance="@style/recipient_s"
+        android:gravity="top"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.homeMenu.ui.home.DetailPengirimanNewFragment"
+    android:background="#CECECE">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MaterialCardView.Cut"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_truk"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            >
+
+            <androidx.viewpager2.widget.ViewPager2
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/viewPagerImageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                />
+
+            <LinearLayout
+                android:id="@+id/iv_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="17.75dp"
+                android:background="@drawable/rectangle_35"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:src="@drawable/ic_back"
+                    app:tint="@color/white" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/judul"
+                android:layout_width="105dp"
+                android:layout_height="25dp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_lonceng"
+                app:layout_constraintEnd_toStartOf="@id/iv_lonceng"
+                app:layout_constraintStart_toEndOf="@id/iv_back"
+                app:layout_constraintTop_toTopOf="@id/iv_back" />
+
+            <LinearLayout
+                android:id="@+id/iv_lonceng"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="17.75dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rectangle_35"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/lonceng" />
+
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_nama_transporter"
+                android:layout_width="125dp"
+                android:layout_height="34dp"
+                android:text="CDD BAK"
+                android:textStyle="bold"
+                android:textSize="28sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"
+                android:lineSpacingExtra="0sp"
+                android:gravity="top"
+                />
+
+            <TextView
+                android:id="@+id/tv_nomor_polisi"
+                android:layout_width="85dp"
+                android:layout_height="20dp"
+                android:text="B 9999 RFP"
+                android:textSize="16sp"
+                android:lineSpacingExtra="0sp"
+                android:gravity="top"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                />
+
+            <View
+                android:id="@+id/vector_13"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@color/white"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:layout_width="320dp"
+                android:layout_height="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:text="Rute Pengiriman"
+                android:textAppearance="@style/recipient_s"
+                android:gravity="top"
+                />
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/kotak_putih2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Kota Asal:" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/et_asal_pencarian_al"
+                        android:layout_width="0px"
+                        android:layout_height="40dp"
+                        android:layout_weight="90"
+                        android:background="#FFFFFF"
+                        android:hint="Pilih Kota Asal"
+                        android:inputType="text"
+                        android:textSize="10sp"
+                        android:focusable="false"/>
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/location" />
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="50dp"
+                    android:background="#36A9E1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Kota Tujuan:" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/et_tujuan_pencarian_al"
+                        android:layout_width="0px"
+                        android:layout_height="40dp"
+                        android:layout_weight="90"
+                        android:background="#FFFFFF"
+                        android:hint="Pilih Kota Tujuan"
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textSize="10sp"
+                        android:focusable="false"/>
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/your_location" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/kotak_putih4"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                android:layout_gravity="center">
+
+                    <TextView
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="60"
+                        android:text="Tanggal Pengiriman:"
+                        android:gravity="center|left"
+                        />
+
+                    <EditText
+                        android:id="@+id/et_tgl_pencarian_al"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="30"
+                        android:background="#FFFFFF"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusableInTouchMode="false"
+                        android:layout_marginRight="5dp"
+                        android:hint="DD - MM - YYYY"
+                        android:inputType="none"
+                        android:textColor="@color/black"
+                        android:textSize="10sp"
+                        android:textStyle="italic"/>
+
+                    <ImageView
+                        android:id="@+id/iv_date"
+                        android:layout_width="17dp"
+                        android:layout_height="17.5dp"
+                        android:src="@drawable/ic_date_svg"
+                        />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/kotak_putih4"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                android:layout_gravity="center">
+
+                    <TextView
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="60"
+                        android:text="Tarif Pengiriman:"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center|left"/>
+
+                    <EditText
+                        android:id="@+id/et_tarif"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="40"
+                        android:background="#FFFFFF"
+                        android:textColorHint="#1D71B8"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="Rp. 200.000"
+                        android:textStyle="bold"
+                        android:textColor="#1D71B8"
+                        android:textSize="16sp"
+                        android:layout_marginRight="10dp"
+                        />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="320dp"
+                android:layout_height="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:text="Informasi Armada"
+                android:textSize="12sp"
+                android:gravity="top"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/kotak_besar"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="center"
+                android:paddingHorizontal="20dp">
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <TextView
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="40"
+                        android:text="Tipe Kendaraan"
+                        android:textAppearance="@style/recipient_s"
+                        android:gravity="top"
+                        android:textSize="12sp"
+                        />
+
+                    <TextView
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10"
+                        android:text=":"
+                        android:textAppearance="@style/recipient_s"
+                        android:gravity="top"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_tipe_kendaraan"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="50"
+                        android:text="CDD Bak"
+                        android:textSize="12sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textAppearance="@style/recipient_s"
+                        android:gravity="right"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <TextView
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="40"
+                        android:text="Merek"
+                        android:textSize="12sp"
+                        android:textAppearance="@style/recipient_s"
+                        android:gravity="top"
+                        />
+
+                    <TextView
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10"
+                        android:text=":"
+                        android:textAppearance="@style/recipient_s"
+                        android:gravity="top"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_merek"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="50"
+                        android:text="CDD Bak"
+                        android:textSize="12sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textAppearance="@style/recipient_s"
+                        android:gravity="right"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <TextView
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="40"
+                        android:text="No. Kir"
+                        android:textSize="12sp"
+                        android:textAppearance="@style/recipient_s"
+                        android:gravity="top"
+                        />
+
+                    <TextView
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10"
+                        android:text=":"
+                        android:textAppearance="@style/recipient_s"
+                        android:gravity="top"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_no_kir"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="50"
+                        android:text="CDD Bak"
+                        android:textSize="12sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textAppearance="@style/recipient_s"
+                        android:gravity="right"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <TextView
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="40"
+                        android:text="Dimensi"
+                        android:textSize="12sp"
+                        android:textAppearance="@style/recipient_s"
+                        android:gravity="top"
+                        />
+
+                    <TextView
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10"
+                        android:text=":"
+                        android:textAppearance="@style/recipient_s"
+                        android:gravity="top"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_dimensi"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="50"
+                        android:text="CDD Bak"
+                        android:textSize="12sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textAppearance="@style/recipient_s"
+                        android:gravity="right"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="100"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="40"
+                        android:textSize="12sp"
+                        android:text="Muatan"
+                        android:textAppearance="@style/recipient_s"
+                        android:gravity="top"
+                        />
+
+                    <TextView
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10"
+                        android:text=":"
+                        android:textAppearance="@style/recipient_s"
+                        android:gravity="top"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_muatan"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="50"
+                        android:text="CDD Bak"
+                        android:textSize="12sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textAppearance="@style/recipient_s"
+                        android:gravity="right"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="150dp"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/rectangle_5">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_booking"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/rectangle_2"
+            android:layout_gravity="center"
+            app:backgroundTint="#36A9E1"
+            android:text="Booking Pengiriman"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

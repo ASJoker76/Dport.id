@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.homeMenu.ui.home.HasilPencarianFragment"
+    android:background="#F7F7F7">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/header_biru"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/iv_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="17.75dp"
+            android:background="@drawable/rectangle_35"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:src="@drawable/ic_back"
+                app:tint="@color/white"/>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/judul"
+            android:layout_width="105dp"
+            android:layout_height="25dp"
+            app:layout_constraintTop_toTopOf="@id/iv_back"
+            app:layout_constraintStart_toEndOf="@id/iv_back"
+            app:layout_constraintEnd_toStartOf="@id/iv_lonceng"
+            app:layout_constraintBottom_toBottomOf="@id/iv_lonceng"
+            android:src="@drawable/hasil_pencarian"/>
+
+        <LinearLayout
+            android:id="@+id/iv_lonceng"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="17.75dp"
+            android:background="@drawable/rectangle_35"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="20dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/lonceng" />
+
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintTop_toBottomOf="@id/judul"
+            android:id="@+id/asaltujuan"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            android:layout_marginHorizontal="20dp">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/kiri"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/kanan"
+                android:layout_width="0px"
+                android:layout_height="50dp"
+                android:layout_weight="50"
+                android:background="@drawable/kotak_putih"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp">
+
+                <ImageView
+                    android:id="@+id/icon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/location"/>
+
+                <AutoCompleteTextView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/et_asal_pencarian_al"
+                    android:layout_width="0px"
+                    android:background="#FFFFFF"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="10sp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/kanan"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/kiri"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="0px"
+                android:layout_height="50dp"
+                android:layout_weight="50"
+                android:background="@drawable/kotak_putih"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp">
+
+                <ImageView
+                    android:id="@+id/icon2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/your_location"/>
+
+                <AutoCompleteTextView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/icon2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/et_tujuan_pencarian_al"
+                    android:layout_width="0px"
+                    android:layout_height="40dp"
+                    android:background="#FFFFFF"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="10sp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/icon_right"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            app:layout_constraintTop_toBottomOf="@id/asaltujuan"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="92"
+            android:background="@drawable/rectangle_4"
+            android:layout_marginHorizontal="20dp">
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="30">
+
+                <ImageView
+                    android:id="@+id/iv_date"
+                    android:layout_width="17dp"
+                    android:layout_height="17.5dp"
+                    android:src="@drawable/ic_date_svg"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    app:tint="@color/main_color_grey"/>
+
+                <EditText
+                    android:id="@+id/et_tgl_pencarian_al"
+                    android:layout_width="0px"
+                    android:layout_height="40dp"
+                    android:layout_weight="90"
+                    android:background="#FFFFFF"
+                    android:clickable="false"
+                    android:layout_gravity="center"
+                    android:cursorVisible="false"
+                    android:layout_marginLeft="5dp"
+                    android:focusableInTouchMode="false"
+                    android:textStyle="italic"
+                    android:hint="DD - MM - YYYY"                     android:inputType="none"
+                    android:textColor="@color/black"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:background="#36A9E1"/>
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="30">
+
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17.5dp"
+                    android:src="@drawable/truk_no_color"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"/>
+
+                <EditText
+                    android:id="@+id/et_tipe_pengiriman"
+                    android:layout_width="0px"
+                    android:layout_height="40dp"
+                    android:layout_weight="90"
+                    android:background="#FFFFFF"
+                    android:clickable="false"
+                    android:layout_gravity="center"
+                    android:cursorVisible="false"
+                    android:layout_marginLeft="5dp"
+                    android:focusableInTouchMode="false"
+                    android:textStyle="italic"
+                    android:hint="Semua Tipe"                     android:inputType="none"
+                    android:textColor="@color/black"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:background="#36A9E1"/>
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="30">
+
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17.5dp"
+                    android:src="@drawable/sort"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"/>
+
+                <EditText
+                    android:layout_width="0px"
+                    android:layout_height="40dp"
+                    android:layout_weight="90"
+                    android:background="#FFFFFF"
+                    android:clickable="false"
+                    android:layout_gravity="center"
+                    android:cursorVisible="false"
+                    android:layout_marginLeft="5dp"
+                    android:focusableInTouchMode="false"
+                    android:textStyle="italic"
+                    android:hint="Sortir"
+                    android:inputType="none"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_hasil_pencarian"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/list_pengiriman_favorite"
+        android:layout_marginHorizontal="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

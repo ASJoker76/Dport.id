@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".view.login.RegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="10"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/rectangle_3"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/rectangle_3"
+            android:elevation="10dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginHorizontal="20dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_back"
+                    android:layout_width="0px"
+                    android:layout_height="40dp"
+                    android:layout_weight="15"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/rectangle_1"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_back"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0px"
+                    android:layout_height="40dp"
+                    android:layout_weight="70"
+                    android:text="@string/daftar_akun"
+                    android:textAppearance="@style/daftar_akun"
+                    android:gravity="center"
+                    />
+
+                <ImageView
+                    android:layout_width="0px"
+                    android:layout_height="40dp"
+                    android:layout_weight="15" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="9">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:orientation="vertical"
+                android:layout_gravity="center|top"
+                android:layout_marginVertical="20dp"
+                >
+
+                <TextView
+                    android:layout_width="320dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentTop="true"
+                    android:text="@string/recipient_nama"
+                    android:textAppearance="@style/recipient_s"
+                    android:gravity="top"
+                    />
+
+                <EditText
+                    android:id="@+id/et_nama_reg_shipper"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_4"
+                    android:hint="@string/hint_nama"
+                    android:textSize="12sp"
+                    android:paddingLeft="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="320dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/recipient_email"
+                    android:textAppearance="@style/recipient_s"
+                    android:gravity="top"
+                    />
+
+                <EditText
+                    android:id="@+id/et_email_reg_shipper"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_4"
+                    android:hint="@string/hint_email"
+                    android:textSize="12sp"
+                    android:paddingLeft="20dp"
+                    android:inputType="textEmailAddress"/>
+
+                <TextView
+                    android:layout_width="320dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/recipient_handphone"
+                    android:textAppearance="@style/recipient_s"
+                    android:gravity="top"
+                    />
+
+                <EditText
+                    android:id="@+id/et_notel_reg_shipper"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_4"
+                    android:hint="@string/hint_handphone"
+                    android:textSize="12sp"
+                    android:paddingLeft="20dp"
+                    android:inputType="phone"/>
+
+                <TextView
+                    android:layout_width="320dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/recipient_katasandi"
+                    android:textAppearance="@style/recipient_s"
+                    android:gravity="top"
+                    />
+
+                <EditText
+                    android:id="@+id/et_password_reg_shipper"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_4"
+                    android:hint="@string/hint_katasandi"
+                    android:textSize="12sp"
+                    android:paddingLeft="20dp"
+                    android:inputType="textPassword"
+                    />
+
+                <TextView
+                    android:layout_width="320dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#36A9E1"
+                    android:text="@string/recipient_warning"
+                    android:textAppearance="@style/recipient_s"
+                    android:gravity="top"
+                    />
+
+                <TextView
+                    android:layout_width="320dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/recipient_konfirmasi"
+                    android:textAppearance="@style/recipient_s"
+                    android:gravity="top"
+                    />
+
+                <EditText
+                    android:id="@+id/et_ulangi_password_reg_shipper"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_4"
+                    android:hint="@string/hint_konfirmasi"
+                    android:textSize="12sp"
+                    android:paddingLeft="20dp"
+                    android:inputType="textPassword"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_login_reg_shipper"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/rectangle_2"
+                    android:layout_gravity="center"
+                    app:backgroundTint="#36A9E1"
+                    android:text="@string/mulai_sekar"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/syarat_ketentuan"
+                    android:textAppearance="@style/recipient_ss"
+                    android:lineSpacingExtra="3sp"
+                    android:translationY="-1.5sp"
+                    android:gravity="top"
+                    />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

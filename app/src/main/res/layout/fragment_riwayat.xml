@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.homeMenu.ui.pengiriman.PengirimanFragment"
+    android:background="#F7F7F7">
+
+    <LinearLayout
+        android:id="@+id/rectangle_3"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rectangle_3"
+        android:elevation="10dp"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginHorizontal="20dp">
+
+            <LinearLayout
+                android:id="@+id/ll_back"
+                android:layout_width="0px"
+                android:layout_height="40dp"
+                android:layout_weight="15"
+                >
+
+                <LinearLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/rectangle_1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_back"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="0px"
+                android:layout_height="40dp"
+                android:layout_weight="70"
+                android:id="@+id/et_search"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="0dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/background_search_abu"
+                android:drawablePadding="10dip"
+                android:hint="Cari Riwayat"
+                android:textSize="12sp"
+                android:textColor="#939393"
+                android:textColorHint="#939393"
+                android:drawableStart="@drawable/search"
+                android:paddingHorizontal="20dp"
+                android:drawableTint="#939393"
+                />
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="40dp"
+                android:layout_weight="15"
+                android:id="@+id/iv_lonceng"
+                android:layout_marginLeft="5dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/et_search"
+                android:gravity="center"
+                android:background="@drawable/rectangle_1">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/sort"
+                    app:tint="#939393"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_riwayat"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/rectangle_3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        tools:listitem="@layout/list_pengiriman_new"
+        android:layout_marginHorizontal="20dp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

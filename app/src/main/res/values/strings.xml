@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Dport.id v1 new Desain</string>
+
+    <string name="beranda">Beranda</string>
+    <string name="riwayat">Riwayat</string>
+    <string name="pengiriman">Pengiriman</string>
+    <string name="akun_saya">Akun Saya</string>
+
+    <array name="search_reguler">
+        <item>Reguler</item>
+        <item>Terjadwal</item>
+    </array>
+
+    <string-array name="type_shipper">
+        <item>Pilih Tipe Shipper</item>
+        <item>Perusahaan</item>
+        <item>Personal</item>
+    </string-array>
+
+    <string-array name="tipe_pengiriman">
+        <item>FTL (Full Truck Load)</item>
+    </string-array>
+
+    <!--    new string new desain -->
+    <string name="your_busines">Your Business Solution Easy Logistics</string>
+    <string name="platform_lo">Platform logistik digital yang menghubungkan langsung antara Shipper (Pengguna logistik) &#38; Transporter (Para pelaku logistik).</string>
+    <string name="mulai_sekar">Mulai Sekarang</string>
+    <string name="masuk">Masuk</string>
+    <string name="kirim">Kirim</string>
+    <string name="sudah_punya">Sudah punya akun?  Masuk</string>
+    <string name="daftar_akun">Daftar <b>Akun</b></string>
+    <string name="masuk_akun">Masuk <b>Akun</b></string>
+    <string name="forgotpassword_akun">Lupa <b>Kata Sandi</b></string>
+    <string name="ringkasan_pengiriman">Ringkasan <b>Pengiriman</b></string>
+    <string name="detail_barang">Detail <b>Barang</b></string>
+    <string name="recipient_nama">Nama*</string>
+    <string name="recipient_email">Email*</string>
+    <string name="recipient_email_handphone">Email/No. Handphone*</string>
+    <string name="recipient_handphone">No. Handphone*</string>
+    <string name="recipient_katasandi">Kata Sandi*</string>
+    <string name="recipient_konfirmasi">Konfirmasi Kata Sandi*</string>
+    <string name="booking_pengiriman">Booking <b>Pengiriman</b></string>
+    <string name="recipient_warning">Kata sandi wajib terdiri dari minimal 8 - 20 karakter.</string>
+    <string name="hint_nama">Tulis nama lengkap anda</string>
+    <string name="hint_email">Tulis alamat email anda</string>
+    <string name="hint_handphone">Masukan No. HP anda</string>
+    <string name="hint_katasandi">Isi kata sandi anda</string>
+    <string name="hint_konfirmasi">Konfirmasi kata sandi anda</string>
+    <string name="hint_email_handphone">Tulis Email/No. Handphone</string>
+    <string name="lupa_kata_sandi">Lupa Kata Sandi?</string>
+    <string name="warning_email">Masukan Email anda untuk atur ulang kata sandi.</string>
+    <string name="syarat_ketentuan">Dengan mendaftar Anda telah menyetujui <font color="#36A9E1"> Syarat dan Ketentuan </font> dari DPORT</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="otp">Kami telah mengirim kode OTP ke Nomor/Email anda</string>
+    <string name="kirim_ulang">Tidak menerima kode OTP?, <font color="#36A9E1">Kirim Uang</font></string>
+    <string name="dokumen_perizinan">Dokumen <b>Perijinan</b></string>
+    <string name="dokumen_perusahaan">Dokumen <b>Perusahaan</b></string>
+    <string name="pilih_salah_satu">*Pilih salah satu tipe usaha anda karena akan berpengaruh pada sistem pembayaran dan jumlah pembayaran pajak</string>
+    <string name="notes">Bila pengiriman lebih dari 80km atau proses dari bongkar sampai muat lebih dari 12 jam akan di kenakan biaya inap 1 hari, begitu seterusnya.</string>
+    <string name="notes_pembayaran">*Batas waktu pembayaran tempo jatuh pada tanggal 14 Maret 2022 mohon untuk melunasi pembayaran sebelum jatuh tempo.</string>
+
+</resources>
