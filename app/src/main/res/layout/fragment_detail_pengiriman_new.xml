@@ -43,6 +43,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="17.75dp"
                 android:background="@drawable/rectangle_35"
+                android:backgroundTint="@color/black"
                 android:gravity="center"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -51,7 +52,7 @@
                     android:layout_width="8dp"
                     android:layout_height="8dp"
                     android:src="@drawable/ic_back"
-                    app:tint="@color/white" />
+                    app:tint="@color/black" />
 
 
             </LinearLayout>

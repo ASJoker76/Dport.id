@@ -38,12 +38,12 @@
                 android:weightSum="100">
 
                 <LinearLayout
-                    android:id="@+id/ll_back"
                     android:layout_width="0px"
                     android:layout_height="40dp"
                     android:layout_weight="15">
 
                     <LinearLayout
+                        android:id="@+id/ll_back"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/rectangle_1"
@@ -101,6 +101,7 @@
                         android:src="@drawable/image_truk"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
+
                         />
 
                     <TextView
@@ -117,6 +118,7 @@
                         android:lineSpacingExtra="0sp"
                         android:gravity="top"
                         app:layout_constraintStart_toEndOf="@id/iv_truk"
+                        android:layout_marginLeft="10dp"
                         />
 
                     <TextView
@@ -130,6 +132,7 @@
                         android:gravity="top"
                         app:layout_constraintStart_toEndOf="@id/iv_truk"
                         app:layout_constraintTop_toBottomOf="@id/tv_nama_truk"
+                        android:layout_marginLeft="10dp"
                         />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -359,11 +362,55 @@
                         android:textColorHint="#CECECE"
                         android:textSize="12sp"
                         android:background="@color/white"
-                        android:hint="Info pengirim belum isi"
+                        android:hint="Info penerima belum isi"
                         android:layout_marginRight="20dp"/>
 
                     <ImageView
                         android:id="@+id/iv_add_penerima"
+                        android:layout_width="17dp"
+                        android:layout_height="17.5dp"
+                        android:src="@drawable/add_plus"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="320dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="10dp"
+                    android:text="Detail Barang"
+                    android:textSize="12sp"
+                    android:gravity="top"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@drawable/kotak_putih4"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="100"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_data_barang"
+                        android:layout_width="0px"
+                        android:layout_height="15dp"
+                        android:layout_weight="90"
+                        android:textColor="@color/black"
+                        android:textColorHint="#CECECE"
+                        android:textSize="12sp"
+                        android:background="@color/white"
+                        android:hint="Belum ada detail barang"
+                        android:layout_marginRight="20dp"/>
+
+                    <ImageView
+                        android:id="@+id/iv_add_barang"
                         android:layout_width="17dp"
                         android:layout_height="17.5dp"
                         android:src="@drawable/add_plus"

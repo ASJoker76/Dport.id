@@ -1,5 +1,7 @@
 package com.app.dportshipper.adapter;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,11 +29,17 @@ public class AdapterRekomendasiTransporter extends RecyclerView.Adapter<AdapterR
     private int lastPosition = -1;
     private ListRekomendasiTransporterNewBinding viewBinding;
 
+    private String tanggal, type_send;
+    private int type_service;
+
     private final static int FADE_DURATION = 1000; //FADE_DURATION in milliseconds
 
-    public AdapterRekomendasiTransporter(Fragment myFragment, ArrayList<MResListPengiriman> dataPengiriman) {
+    public AdapterRekomendasiTransporter(Fragment myFragment, ArrayList<MResListPengiriman> dataPengiriman,String type_send,int type_service,String tanggal) {
         this.myFragment = myFragment;
         this.dataPengiriman = dataPengiriman;
+        this.type_send = type_send;
+        this.type_service = type_service;
+        this.tanggal = tanggal;
     }
 
     @NonNull
@@ -57,15 +65,20 @@ public class AdapterRekomendasiTransporter extends RecyclerView.Adapter<AdapterR
         holder.viewBinding.header.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle bundle = new Bundle();
-                bundle.putInt("id_order", resBursaPengiriman.getId_order());
-                bundle.putString("status","pemesanan");
-                DetailPengirimanNewFragment fragementIntent = new DetailPengirimanNewFragment();
-                FragmentManager manager = myFragment.getActivity().getSupportFragmentManager();
-                FragmentTransaction transaction = manager.beginTransaction();
-                transaction.replace(R.id.nav_host_fragment, fragementIntent);
-                fragementIntent.setArguments(bundle);
-                transaction.commit();
+//                SharedPreferences.Editor editor = myFragment.getActivity().getBaseContext().getSharedPreferences("data_transporter", Context.MODE_PRIVATE).edit();
+//                editor.putString("kab_asal", resBursaPengiriman.getKab_asal());
+//                editor.putString("kab_tujuan", resBursaPengiriman.getKab_tujuan());
+//                editor.putString("type_send", type_send);
+//                editor.putInt("type_service", type_service);
+//                editor.putString("tanggal", tanggal);
+//                editor.putInt("id_produk_transporter", resBursaPengiriman.getId_transporter());
+//                editor.apply();
+//
+//                DetailPengirimanNewFragment fragementIntent = new DetailPengirimanNewFragment();
+//                FragmentManager manager = myFragment.getActivity().getSupportFragmentManager();
+//                FragmentTransaction transaction = manager.beginTransaction();
+//                transaction.replace(R.id.nav_host_fragment, fragementIntent);
+//                transaction.commit();
             }
         });
         setAnimation(holder.itemView, position);

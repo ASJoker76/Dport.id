@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="10dp"
+    app:cardCornerRadius="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="5dp"
+        android:weightSum="100">
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="15"
+            android:fontFamily="@font/readexpro_medium"
+            android:text="Kategori"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text=":"
+            android:textColor="@color/black"
+            android:textSize="11sp" />
+        <TextView
+            android:id="@+id/tv_kategori_barang_ringkasan"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="32"
+            android:fontFamily="@font/readexpro_medium"
+            android:textSize="11sp"
+            android:textColor="@color/black" />
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:fontFamily="@font/readexpro_medium"
+            android:text="Lebar (Cm/Pcs )"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text=":"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_lebarcm_pcs_ringkasan"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="22"
+            android:fontFamily="@font/readexpro_medium"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="5dp"
+        android:weightSum="100">
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="15"
+            android:fontFamily="@font/readexpro_medium"
+            android:text="Jumlah"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text=":"
+            android:textColor="@color/black"
+            android:textSize="11sp" />
+        <TextView
+            android:id="@+id/tv_jumlah_barang_ringkasan"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="32"
+            android:fontFamily="@font/readexpro_medium"
+            android:textSize="11sp"
+            android:textColor="@color/black" />
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:fontFamily="@font/readexpro_medium"
+            android:text="Tinggi (Cm)"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text=":"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_tinggi_cm_barang_ringkasan"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="22"
+            android:fontFamily="@font/readexpro_medium"
+            android:textColor="@color/black"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="5dp"
+        android:weightSum="100">
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="20"
+            android:fontFamily="@font/readexpro_medium"
+            android:text="Bobot (Kg/Pcs)"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text=":"
+            android:textColor="@color/black"
+            android:textSize="11sp" />
+        <TextView
+            android:id="@+id/tv_bobot_barang_ringkasan"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="27"
+            android:fontFamily="@font/readexpro_medium"
+            android:textSize="11sp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:fontFamily="@font/readexpro_medium"
+            android:text="Volume"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text=":"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_volume_barang"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="22"
+            android:fontFamily="@font/readexpro_medium"
+            android:textColor="@color/black"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="5dp"
+        android:weightSum="100">
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:fontFamily="@font/readexpro_medium"
+            android:text="Panjang (cm/pcs)"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text=":"
+            android:textColor="@color/black"
+            android:textSize="11sp" />
+        <TextView
+            android:id="@+id/tv_panjang_barang_ringkasan"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="72"
+            android:fontFamily="@font/readexpro_medium"
+            android:textSize="11sp"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

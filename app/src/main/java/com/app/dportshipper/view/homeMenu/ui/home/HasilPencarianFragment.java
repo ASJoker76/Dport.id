@@ -121,7 +121,7 @@ public class HasilPencarianFragment extends Fragment {
     
     private void loadtable2() {
         dataPencarianArrayList = new ArrayList<>();
-        adapterPengirimanFavorite = new AdapterPengirimanFavorite(this, dataPencarianArrayList);
+        adapterPengirimanFavorite = new AdapterPengirimanFavorite(this, dataPencarianArrayList,type_send,type_service,tanggal);
         binding.rvHasilPencarian.setAdapter(new AlphaInAnimationAdapter(adapterPengirimanFavorite));
         binding.rvHasilPencarian.setLayoutManager(new GridLayoutManager(getActivity(), 1,GridLayoutManager.VERTICAL, false));
         binding.rvHasilPencarian.addItemDecoration(new GridSpacingItemDecoration(2, 2,true,2));

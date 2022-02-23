@@ -1,5 +1,8 @@
 package com.app.dportshipper.adapter;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,11 +10,16 @@ import android.view.animation.AlphaAnimation;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.dportshipper.R;
 import com.app.dportshipper.databinding.ListPengirimanFavoriteBinding;
 import com.app.dportshipper.model.DataPencarian;
+import com.app.dportshipper.view.homeMenu.ui.home.DetailPengirimanNewFragment;
+import com.app.dportshipper.view.homeMenu.ui.home.HasilPencarianFragment;
+import com.app.dportshipper.view.homeMenu.ui.pengiriman.DetailPengirimanFragment;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
@@ -26,9 +34,15 @@ public class AdapterPengirimanFavorite extends RecyclerView.Adapter<AdapterPengi
 
     private final static int FADE_DURATION = 1000; //FADE_DURATION in milliseconds
 
-    public AdapterPengirimanFavorite(Fragment myFragment, ArrayList<DataPencarian> dataPengiriman) {
+    private String tanggal, type_send;
+    private int type_service;
+
+    public AdapterPengirimanFavorite(Fragment myFragment, ArrayList<DataPencarian> dataPengiriman,String type_send,int type_service,String tanggal) {
         this.myFragment = myFragment;
         this.dataPengiriman = dataPengiriman;
+        this.type_send = type_send;
+        this.type_service = type_service;
+        this.tanggal = tanggal;
     }
 
     @NonNull
@@ -51,6 +65,34 @@ public class AdapterPengirimanFavorite extends RecyclerView.Adapter<AdapterPengi
                 .centerCrop()
                 .placeholder(R.drawable.image)
                 .into(viewBinding.ivTransporterRekomendasi);
+        holder.viewBinding.clView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Bundle bundle = new Bundle();
+//                bundle.putString("kab_asal", resBursaPengiriman.getKab_asal());
+//                bundle.putString("kab_tujuan", resBursaPengiriman.getKab_tujuan());
+//                bundle.putString("type_send", type_send);
+//                bundle.putInt("type_service", type_service);
+//                bundle.putString("tanggal", tanggal);
+//                bundle.putInt("id_produk_transporter", resBursaPengiriman.getId_produk_transporter());
+
+                SharedPreferences.Editor editor = myFragment.getActivity().getBaseContext().getSharedPreferences("data_transporter", Context.MODE_PRIVATE).edit();
+                editor.putString("kab_asal", resBursaPengiriman.getKab_asal());
+                editor.putString("kab_tujuan", resBursaPengiriman.getKab_tujuan());
+                editor.putString("type_send", type_send);
+                editor.putInt("type_service", type_service);
+                editor.putString("tanggal", tanggal);
+                editor.putInt("id_produk_transporter", resBursaPengiriman.getId_produk_transporter());
+                editor.apply();
+
+                DetailPengirimanNewFragment fragementIntent = new DetailPengirimanNewFragment();
+                FragmentManager manager = myFragment.getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                transaction.replace(R.id.nav_host_fragment, fragementIntent);
+                //fragementIntent.setArguments(bundle);
+                transaction.commit();
+            }
+        });
         setAnimation(holder.itemView, position);
     }
 

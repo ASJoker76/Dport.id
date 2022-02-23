@@ -56,11 +56,14 @@ public class BerandaFragment extends Fragment {
     private String token;
 
 //    private BerandaViewModel model;
-
-    private List<ResPencarianAuto> listData = new ArrayList<>();
-    List<String> dataPencarian = new ArrayList<>();
     private ArrayAdapter<String> adapterPencarian;
+    List<String> dataPencarian = new ArrayList<>();
+    private List<ResPencarianAuto> listData = new ArrayList<>();
+    private String tanggal;
+    private int type_service;
+    private String type_send;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -72,7 +75,6 @@ public class BerandaFragment extends Fragment {
         inisiasi();
         loadtable();
         loadtable2();
-        loadspinner();
         asynTask task = new asynTask();
         task.execute();
         setManual();
@@ -111,7 +113,7 @@ public class BerandaFragment extends Fragment {
         protected void onPostExecute(String result) {
             // onPostExecute akan dieksekusi setelah doInBackground selesai dieksekusi
             loadapiautocomplite();
-            loadapipengirimanfavorite();
+            loadapipengirimanfavorite("Bandung","Kepulauan Seribu");
         }
     }
 
@@ -133,19 +135,22 @@ public class BerandaFragment extends Fragment {
                 binding.etSearch.performClick();
             }
         });
+
+        binding.ivSearchRute.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadapipengirimanfavorite(binding.etAsalPencarianAl.getText().toString(),binding.etTujuanPencarianAl.getText().toString());
+            }
+        });
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    private void loadapipengirimanfavorite() {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-        LocalDateTime now = LocalDateTime.now();
-
+    private void loadapipengirimanfavorite(String asal, String tujuan) {
         ReqPencarian reqPencarian = new ReqPencarian();
-        reqPencarian.setKab_asal("Kota Jakarta Timur");
-        reqPencarian.setKab_tujuan("Kota Pekanbaru");
-        reqPencarian.setTanggal(dtf.format(now));
-        reqPencarian.setType_service(1);
-        reqPencarian.setType_send("Reguler");
+        reqPencarian.setKab_asal(asal);
+        reqPencarian.setKab_tujuan(tujuan);
+        reqPencarian.setTanggal(tanggal);
+        reqPencarian.setType_service(type_service);
+        reqPencarian.setType_send(type_send);
 
         /* Set Res Pencarian */
         Call<ResPencarian> callPencarian = API.service().PencarianShipperPage(token, reqPencarian);
@@ -156,10 +161,12 @@ public class BerandaFragment extends Fragment {
 
                 if (response.code() == 200) {
                     ResPencarian resPencarian = response.body();
+                    dataPencarianArrayList.clear();
                     dataPencarianArrayList.addAll(resPencarian.getData());
                     adapterPengirimanFavorite.notifyDataSetChanged();
                 } else if (response.code() == 204) {
-
+                    dataPencarianArrayList.clear();
+                    adapterPengirimanFavorite.notifyDataSetChanged();
                 }
             }
             @Override
@@ -170,29 +177,33 @@ public class BerandaFragment extends Fragment {
     }
 
     private void setManual() {
-        String kota_asal = "Kota Jakarta Timur";
-        if (kota_asal != null) {
-            int spinnerPosition = adapterPencarian.getPosition(kota_asal);
-            binding.etAsalPencarianAl.setSelection(spinnerPosition);
-        }
-        String kota_tujuan = "Kota Pekanbaru";
-        if (kota_tujuan != null) {
-            int spinnerPosition = adapterPencarian.getPosition(kota_tujuan);
-            binding.etTujuanPencarianAl.setSelection(spinnerPosition);
-        }
+        binding.etAsalPencarianAl.setText("Bandung");
+        binding.etTujuanPencarianAl.setText("Kepulauan Seribu");
+//        String kota_asal = "Kota Jakarta Timur";
+//        if (kota_asal != null) {
+//            int spinnerPosition = adapterPencarian.getPosition(kota_asal);
+//            binding.etAsalPencarianAl.setSelection(spinnerPosition);
+//        }
+//        String kota_tujuan = "Kota Pekanbaru";
+//        if (kota_tujuan != null) {
+//            int spinnerPosition = adapterPencarian.getPosition(kota_tujuan);
+//            binding.etTujuanPencarianAl.setSelection(spinnerPosition);
+//        }
     }
 
-    private void loadspinner() {
+    private void loadapiautocomplite() {
         adapterPencarian= new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_spinner_item, dataPencarian);
+
+        onLoad("");
         binding.etAsalPencarianAl.setAdapter(adapterPencarian);
         binding.etTujuanPencarianAl.setAdapter(adapterPencarian);
     }
 
-    private void loadapiautocomplite() {
+    private void onLoad(String s) {
         ReqPencarianAuto reqPencarianAuto = new ReqPencarianAuto();
 
-        reqPencarianAuto.setParam("");
+        reqPencarianAuto.setParam(s.toString());
 
         Call<List<ResPencarianAuto>> getListAsal = API.service().sAutoRequest(token, reqPencarianAuto);
         getListAsal.enqueue(new Callback<List<ResPencarianAuto>>() {
@@ -215,9 +226,17 @@ public class BerandaFragment extends Fragment {
         });
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private void loadsession() {
         SharedPreferences prefs = getActivity().getBaseContext().getSharedPreferences("login", Context.MODE_PRIVATE);
         token   = prefs.getString("token","");
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        LocalDateTime now = LocalDateTime.now();
+
+        tanggal = dtf.format(now);
+        type_service = 1;
+        type_send = "Reguler";
     }
 
     private void loadapirekomendasitransporter() {
@@ -251,7 +270,7 @@ public class BerandaFragment extends Fragment {
 
     private void loadtable() {
         allResBursaPengirimanArrayList = new ArrayList<>();
-        adapterRekomendasiTransporter = new AdapterRekomendasiTransporter(this, allResBursaPengirimanArrayList);
+        adapterRekomendasiTransporter = new AdapterRekomendasiTransporter(this, allResBursaPengirimanArrayList,type_send,type_service,tanggal);
         binding.rvRekomendasiTransporter.setAdapter(new AlphaInAnimationAdapter(adapterRekomendasiTransporter));
         binding.rvRekomendasiTransporter.setLayoutManager(new GridLayoutManager(getActivity(), 1,GridLayoutManager.VERTICAL, false));
         binding.rvRekomendasiTransporter.addItemDecoration(new GridSpacingItemDecoration(2, 2,true,2));
@@ -265,7 +284,7 @@ public class BerandaFragment extends Fragment {
 
     private void loadtable2() {
         dataPencarianArrayList = new ArrayList<>();
-        adapterPengirimanFavorite = new AdapterPengirimanFavorite(this, dataPencarianArrayList);
+        adapterPengirimanFavorite = new AdapterPengirimanFavorite(this, dataPencarianArrayList,type_send,type_service,tanggal);
         binding.rvPengirimanFavorite.setAdapter(new AlphaInAnimationAdapter(adapterPengirimanFavorite));
         binding.rvPengirimanFavorite.setLayoutManager(new GridLayoutManager(getActivity(), 1,GridLayoutManager.VERTICAL, false));
         binding.rvPengirimanFavorite.addItemDecoration(new GridSpacingItemDecoration(2, 2,true,2));

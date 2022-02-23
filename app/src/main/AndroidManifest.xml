@@ -23,6 +23,9 @@
         android:theme="@style/Theme.DportidV1NewDesain"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".view.inputDataDiri.TypeUsahaActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.inputDataDiri.InputDataDiriActivity"
             android:exported="false" />
         <activity

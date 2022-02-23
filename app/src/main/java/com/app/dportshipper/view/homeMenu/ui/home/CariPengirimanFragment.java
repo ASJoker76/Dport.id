@@ -19,6 +19,7 @@ import com.app.dportshipper.connection.API;
 import com.app.dportshipper.databinding.FragmentCariPengirimanBinding;
 import com.app.dportshipper.model.request.ReqPencarianAuto;
 import com.app.dportshipper.model.response.ResPencarianAuto;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -59,6 +60,18 @@ public class CariPengirimanFragment extends Fragment {
     }
 
     private void onClick() {
+        binding.ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BottomNavigationView navBar = getActivity().findViewById(R.id.nav_view);
+                navBar.setVisibility(View.VISIBLE);
+
+                BerandaFragment inbound = new BerandaFragment();
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.nav_host_fragment, inbound);
+                ft.commit();
+            }
+        });
         binding.btnCariHomePengiriman.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
