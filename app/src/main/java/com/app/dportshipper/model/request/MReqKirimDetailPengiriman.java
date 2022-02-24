@@ -1,6 +1,8 @@
 package com.app.dportshipper.model.request;
 
 import com.app.dportshipper.model.MHead;
+import com.app.dportshipper.model.MListDataBarang;
+import com.app.dportshipper.model.MPenerima;
 import com.app.dportshipper.model.MPengirim;
 import com.app.dportshipper.model.NewAlamat;
 
@@ -11,8 +13,8 @@ public class MReqKirimDetailPengiriman {
 
     MHead head;
     MPengirim pengirim;
-    List<NewAlamat> penerima = new ArrayList<>();
-    //List<MListDataBarang> detail_barang= new ArrayList<>();
+    List<MPenerima> penerima = new ArrayList<>();
+    List<MListDataBarang> detail_barang= new ArrayList<>();
 
     public MHead getHead() {
         return head;
@@ -30,11 +32,19 @@ public class MReqKirimDetailPengiriman {
         this.pengirim = pengirim;
     }
 
-    public List<NewAlamat> getPenerima() {
+    public List<MPenerima> getPenerima() {
         return penerima;
     }
 
-    public void setPenerima(List<NewAlamat> penerima) {
+    public void setPenerima(List<MPenerima> penerima) {
         this.penerima = penerima;
+    }
+
+    public List<MListDataBarang> getDetail_barang() {
+        return detail_barang;
+    }
+
+    public void setDetail_barang(List<MListDataBarang> detail_barang) {
+        this.detail_barang = detail_barang;
     }
 }

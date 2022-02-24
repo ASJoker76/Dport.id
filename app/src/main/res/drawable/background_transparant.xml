@@ -5,8 +5,7 @@
 
     <solid android:color="@color/float_transparent"/>
     <padding android:right="5dp" android:left="5dp" android:top="5dp" android:bottom="5dp"/>
-    <stroke android:color="@color/abu_tua" android:width="4dp" android:dashGap="4dp"
-        android:dashWidth="4dp"/>
+    <stroke android:color="@color/biru" android:width="4dp"/>
     <corners android:radius="15dp"/>
 
 

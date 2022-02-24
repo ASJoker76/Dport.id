@@ -234,7 +234,8 @@ public class BerandaFragment extends Fragment {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDateTime now = LocalDateTime.now();
 
-        tanggal = dtf.format(now);
+        //tanggal = dtf.format(now);
+        tanggal = "23/02/2022";
         type_service = 1;
         type_send = "Reguler";
     }

@@ -83,6 +83,7 @@ public class AdapterPengirimanFavorite extends RecyclerView.Adapter<AdapterPengi
                 editor.putInt("type_service", type_service);
                 editor.putString("tanggal", tanggal);
                 editor.putInt("id_produk_transporter", resBursaPengiriman.getId_produk_transporter());
+                editor.putInt("id_transporter", resBursaPengiriman.getId_transporter());
                 editor.apply();
 
                 DetailPengirimanNewFragment fragementIntent = new DetailPengirimanNewFragment();

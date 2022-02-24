@@ -19,6 +19,7 @@ import com.app.dportshipper.R;
 import com.app.dportshipper.connection.API;
 import com.app.dportshipper.databinding.FragmentDetailBarang2Binding;
 import com.app.dportshipper.databinding.FragmentDetailBarangBinding;
+import com.app.dportshipper.model.MAlamatPenerima;
 import com.app.dportshipper.model.MListDataBarang;
 import com.app.dportshipper.model.NewAlamat;
 import com.app.dportshipper.model.response.MResKategoriBarang;
@@ -36,7 +37,8 @@ import retrofit2.Response;
 public class DetailBarangFragment extends Fragment {
 
     private FragmentDetailBarang2Binding binding;
-    ArrayList<MListDataBarang> listDataBarang;
+    private ArrayList<MListDataBarang> listDataBarang;
+    private ArrayList<MAlamatPenerima> listDataAlamat;
     private ArrayAdapter adapterKatbarang;
     List<String> dataKatBarang = new ArrayList<>();
     private int idKatBarang;
@@ -114,6 +116,7 @@ public class DetailBarangFragment extends Fragment {
         Bundle bundle = this.getArguments();
         if (bundle != null) {
             listDataBarang = bundle.getParcelableArrayList("listDataBarang");
+            listDataAlamat = bundle.getParcelableArrayList("listDataAlamat");
         }
     }
 
@@ -187,6 +190,7 @@ public class DetailBarangFragment extends Fragment {
         else{
             bundle.putParcelableArrayList("listDataBarang", (ArrayList<? extends Parcelable>) listDataBarangNew);
         }
+        bundle.putParcelableArrayList("listDataAlamat", (ArrayList<? extends Parcelable>) listDataAlamat);
         ringkasanPesananFragment.setArguments(bundle);
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.nav_host_fragment, ringkasanPesananFragment);
