@@ -88,6 +88,9 @@ public class DetailPengirimanNewFragment extends Fragment {
         binding.btnBooking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences.Editor editor = getActivity().getBaseContext().getSharedPreferences("data_transporter", Context.MODE_PRIVATE).edit();
+                editor.putBoolean("loadalamat", false);
+                editor.apply();
 //                Bundle bundle = new Bundle();
 //                bundle.putString("kab_asal", kab_asal);
 //                bundle.putString("kab_tujuan", kab_tujuan);

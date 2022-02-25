@@ -55,8 +55,18 @@ public class PengirimanFragment extends Fragment implements AdapterStatus.OnKlik
         loadtable2();
         loadapistatus();
         loaddatapengiriman(18);
+        onclick();
 
         return root;
+    }
+
+    private void onclick() {
+        binding.llBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     private void loadtable2() {

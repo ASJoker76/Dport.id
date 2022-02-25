@@ -106,10 +106,10 @@
                         android:id="@+id/tv_nama_truk"
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
+                        android:autoSizeTextType="uniform"
                         android:text="CDD BAK"
                         android:textColor="@color/black"
                         android:textSize="20sp"
-                        android:autoSizeTextType="uniform"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toTopOf="@id/tv_plat_no"
                         app:layout_constraintStart_toEndOf="@id/iv_truk"
@@ -492,6 +492,7 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/tv_payment"
                     android:layout_width="320dp"
                     android:layout_height="15dp"
                     android:layout_marginTop="10dp"
@@ -500,6 +501,7 @@
                     android:textSize="12sp" />
 
                 <LinearLayout
+                    android:id="@+id/ly_payment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -514,16 +516,15 @@
                         android:layout_height="20dp"
                         android:layout_weight="10"
                         android:gravity="center|left"
-                        android:src="@drawable/ic_timer"/>
+                        android:src="@drawable/ic_timer" />
 
                     <TextView
                         android:layout_width="0px"
                         android:layout_height="match_parent"
                         android:layout_weight="40"
-                        android:text="Tempo 30 Hari"
-                        android:textStyle="bold"
                         android:gravity="left|center"
-                        />
+                        android:text="Tempo 30 Hari"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="0px"
@@ -531,12 +532,11 @@
                         android:layout_weight="30"
                         android:background="#FFFFFF"
                         android:clickable="false"
-                        android:text="Bayar Sekarang"
                         android:focusableInTouchMode="false"
                         android:inputType="none"
+                        android:text="Bayar Sekarang"
                         android:textColor="#36A9E1"
-                        android:textSize="12sp"
-                        />
+                        android:textSize="12sp" />
 
                     <ImageView
                         android:id="@+id/iv_right"
@@ -553,14 +553,13 @@
                     android:layout_marginTop="10dp"
                     android:gravity="top"
                     android:text="@string/notes_pembayaran"
-                    android:textSize="12sp"
-                    />
+                    android:textSize="12sp" />
 
                 <View
-                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/white"/>
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -568,8 +567,7 @@
                     android:layout_marginTop="10dp"
                     android:gravity="top"
                     android:text="Info Pengirim"
-                    android:textSize="12sp"
-                    />
+                    android:textSize="12sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -593,17 +591,15 @@
                             android:id="@+id/tv_nama_pengirim"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textStyle="bold"
                             android:textColor="@color/black"
-                            />
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tv_no_tlp_pengirim"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textStyle="bold"
                             android:textColor="@color/black"
-                            />
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -612,15 +608,14 @@
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
                         android:layout_weight="20"
-                        android:src="@drawable/ic_chat"
-                        />
+                        android:src="@drawable/ic_chat" />
 
                     <ImageView
                         android:id="@+id/iv_call_pengirim"
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
                         android:layout_weight="20"
-                        android:src="@drawable/ic_call"/>
+                        android:src="@drawable/ic_call" />
 
                 </LinearLayout>
 
@@ -630,8 +625,7 @@
                     android:layout_marginTop="10dp"
                     android:gravity="top"
                     android:text="Info Penerima"
-                    android:textSize="12sp"
-                    />
+                    android:textSize="12sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -655,17 +649,15 @@
                             android:id="@+id/tv_nama_penerima"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textStyle="bold"
                             android:textColor="@color/black"
-                            />
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tv_no_tlp_penerima"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textStyle="bold"
                             android:textColor="@color/black"
-                            />
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -674,23 +666,22 @@
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
                         android:layout_weight="20"
-                        android:src="@drawable/ic_chat"
-                        />
+                        android:src="@drawable/ic_chat" />
 
                     <ImageView
                         android:id="@+id/iv_call_penerima"
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
                         android:layout_weight="20"
-                        android:src="@drawable/ic_call"/>
+                        android:src="@drawable/ic_call" />
 
                 </LinearLayout>
 
                 <View
-                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/white"/>
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white" />
 
                 <LinearLayout
                     android:id="@+id/ly_detail"
@@ -707,10 +698,9 @@
                         android:layout_width="0px"
                         android:layout_height="match_parent"
                         android:layout_weight="90"
-                        android:text="Detail Barang"
-                        android:textStyle="bold"
                         android:gravity="left|center"
-                        />
+                        android:text="Detail Barang"
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/iv_detail_barang"
@@ -722,10 +712,10 @@
                 </LinearLayout>
 
                 <View
-                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/white"/>
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -733,8 +723,7 @@
                     android:layout_marginTop="10dp"
                     android:gravity="top"
                     android:text="Informasi Driver"
-                    android:textSize="12sp"
-                    />
+                    android:textSize="12sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -750,9 +739,9 @@
                         android:id="@+id/iv_photo_driver"
                         android:layout_width="0px"
                         android:layout_height="30dp"
+                        android:layout_gravity="center"
                         android:layout_weight="20"
-                        android:src="@drawable/image"
-                        android:layout_gravity="center"/>
+                        android:src="@drawable/image" />
 
                     <LinearLayout
                         android:layout_width="0px"
@@ -766,14 +755,12 @@
                         <TextView
                             android:id="@+id/tv_nama_driver"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            />
+                            android:layout_height="wrap_content" />
 
                         <TextView
                             android:id="@+id/tv_no_tlp_driver"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            />
+                            android:layout_height="wrap_content" />
 
                     </LinearLayout>
 
@@ -782,125 +769,42 @@
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
                         android:layout_weight="20"
-                        android:src="@drawable/ic_chat"
-                        />
+                        android:src="@drawable/ic_chat" />
 
                     <ImageView
                         android:id="@+id/iv_call_driver"
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
                         android:layout_weight="20"
-                        android:src="@drawable/ic_call"/>
+                        android:src="@drawable/ic_call" />
 
                 </LinearLayout>
 
                 <View
-                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/white"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:gravity="top"
-                    android:text="Proses Bongkar Muat Barang"
-                    android:textSize="12sp"
-                    />
+                    android:background="@color/white" />
 
                 <LinearLayout
+                    android:id="@+id/ly_foto_bongkar_dan_buat"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/kotak_putih4"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:weightSum="100">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="0px"
-                        android:layout_height="match_parent"
-                        android:layout_weight="90"
-                        android:text="Muat Barang"
-                        android:textStyle="bold"
-                        android:gravity="left|center"
-                        />
-
-                    <ImageView
-                        android:id="@+id/iv_muat_barang"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/right"
-                        app:tint="#36A9E1" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="top"
-                    android:text="*Transporter telah melakukan muat barang."
-                    android:textSize="9sp"
-                    />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/kotak_putih4"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:weightSum="100">
-
-                    <TextView
-                        android:layout_width="0px"
-                        android:layout_height="match_parent"
-                        android:layout_weight="90"
-                        android:text="Bongkar Barang"
-                        android:textStyle="bold"
-                        android:gravity="left|center"
-                        />
-
-                    <ImageView
-                        android:id="@+id/iv_bongkar_barang"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/right"
-                        app:tint="#36A9E1" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="top"
-                    android:text="*Transporter telah melakukan bongkar barang."
-                    android:textSize="9sp"
-                    />
-
-                <View
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/white"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="100"
-                    android:layout_marginTop="10dp">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="top"
+                        android:text="Proses Bongkar Muat Barang"
+                        android:textSize="12sp" />
 
                     <LinearLayout
-                        android:layout_width="0px"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="50"
                         android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
                         android:background="@drawable/kotak_putih4"
                         android:gravity="center"
                         android:orientation="horizontal"
@@ -910,25 +814,32 @@
                             android:layout_width="0px"
                             android:layout_height="match_parent"
                             android:layout_weight="90"
-                            android:text="Invoice"
-                            android:drawableStart="@drawable/ic_dock"
-                            android:textStyle="bold"
                             android:gravity="left|center"
-                            />
+                            android:text="Muat Barang"
+                            android:textStyle="bold" />
 
                         <ImageView
-                            android:id="@+id/iv_invoice"
+                            android:id="@+id/iv_muat_barang"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:src="@drawable/right"
                             app:tint="#36A9E1" />
 
                     </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="top"
+                        android:text="*Transporter telah melakukan muat barang."
+                        android:textSize="9sp" />
+
                     <LinearLayout
-                        android:layout_width="0px"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="50"
                         android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
                         android:background="@drawable/kotak_putih4"
                         android:gravity="center"
                         android:orientation="horizontal"
@@ -938,14 +849,12 @@
                             android:layout_width="0px"
                             android:layout_height="match_parent"
                             android:layout_weight="90"
-                            android:drawableStart="@drawable/ic_dock"
-                            android:text="e-kontrak"
-                            android:textStyle="bold"
                             android:gravity="left|center"
-                            />
+                            android:text="Bongkar Barang"
+                            android:textStyle="bold" />
 
                         <ImageView
-                            android:id="@+id/iv_e_kontrak"
+                            android:id="@+id/iv_bongkar_barang"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:src="@drawable/right"
@@ -953,49 +862,194 @@
 
                     </LinearLayout>
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="top"
+                        android:text="*Transporter telah melakukan bongkar barang."
+                        android:textSize="9sp" />
+
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@drawable/kotak_putih4"
-                    android:gravity="center"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal"
                     android:weightSum="100"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginBottom="10dp">
 
-                    <TextView
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_invoice"
                         android:layout_width="0px"
                         android:layout_height="match_parent"
-                        android:layout_weight="90"
-                        android:text="Surat Jalan"
-                        android:drawableStart="@drawable/ic_dock"
-                        android:textStyle="bold"
-                        android:gravity="left|center"
-                        />
+                        android:layout_weight="50"
+                        app:cardCornerRadius="10dp"
+                        android:layout_marginRight="5dp"
+                        android:visibility="gone">
 
-                    <ImageView
-                        android:id="@+id/iv_surat_jalan"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/right"
-                        app:tint="#36A9E1" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:weightSum="100">
 
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_dock"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_invoice"
+                                android:layout_width="0px"
+                                android:layout_height="match_parent"
+                                android:layout_weight="80"
+                                android:layout_marginHorizontal="10dp"
+                                android:gravity="left|center"
+                                android:text="Invoice"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/iv_invoice"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/right"
+                                app:tint="#36A9E1" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_e_kontrak"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="50"
+                        app:cardCornerRadius="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:weightSum="100">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_dock"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_e_kontrak"
+                                android:layout_width="0px"
+                                android:layout_height="match_parent"
+                                android:layout_weight="80"
+                                android:layout_marginHorizontal="10dp"
+                                android:gravity="left|center"
+                                android:text="e-kontrak"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/iv_e_kontrak"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/right"
+                                app:tint="#36A9E1" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
                 </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_surat_jalan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="100">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_dock"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_surat_jalan"
+                            android:layout_width="0px"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_weight="80"
+                            android:gravity="left|center"
+                            android:text="Surat Jalan"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/iv_surat_jalan"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/right"
+                            app:tint="#36A9E1" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_status_pengiriman"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/rectangle_2"
                     android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="50dp"
+                    android:background="@drawable/background_transparant"
                     android:text="Status Pengiriman"
                     android:textAllCaps="false"
-                    android:textColor="@color/white"
+                    android:textColor="@color/biru"
+                    app:backgroundTint="#36A9E1" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_bayar_sekarang"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="50dp"
+                    android:background="@drawable/rectangle_2"
+                    android:text="Bayar Sekarang"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
                     app:backgroundTint="#36A9E1"
-                    />
+                    android:visibility="gone"/>
             </LinearLayout>
 
         </ScrollView>

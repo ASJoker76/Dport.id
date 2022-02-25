@@ -183,7 +183,7 @@
                             android:focusable="false"
                             android:gravity="top"
                             android:inputType="text|textMultiLine"
-                            android:text="Pabrik XYZ\nJl. Prof. DR. Satrio No.7, RT.7/RW.2, Kuningan, Kuningan Timur"/>
+                            />
 
                         <ImageView
                             android:layout_width="14dp"
@@ -197,6 +197,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/ly_alamat_pengirim"
                     android:layout_marginTop="10dp"
                     android:layout_marginHorizontal="20dp"
                     android:layout_width="match_parent"
@@ -302,36 +303,47 @@
                     android:gravity="top"
                     />
 
-                <LinearLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginHorizontal="20dp"
-                    android:background="@drawable/kotak_putih4"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:weightSum="100"
-                    android:layout_gravity="center">
+                    app:cardCornerRadius="10dp">
 
-                    <EditText
-                        android:layout_width="0px"
-                        android:layout_height="15dp"
-                        android:layout_weight="90"
-                        android:textColor="@color/black"
-                        android:textColorHint="#CECECE"
-                        android:textSize="12sp"
-                        android:background="@color/white"
-                        android:hint="Info pengirim belum isi"
-                        android:layout_marginRight="20dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:weightSum="100">
 
-                    <ImageView
-                        android:id="@+id/iv_add_pengirim"
-                        android:layout_width="17dp"
-                        android:layout_height="17.5dp"
-                        android:src="@drawable/add_plus"
-                        />
+                        <EditText
+                            android:id="@+id/et_info_pengirim"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="90"
+                            android:textColor="@color/black"
+                            android:textColorHint="#CECECE"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:background="@color/white"
+                            android:hint="Info pengirim belum isi"
+                            android:layout_marginRight="20dp"
+                            android:focusable="false"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"/>
 
-                </LinearLayout>
+                        <ImageView
+                            android:id="@+id/iv_add_pengirim"
+                            android:layout_width="17dp"
+                            android:layout_height="17.5dp"
+                            android:src="@drawable/add_plus"
+                            />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:layout_width="320dp"
@@ -343,6 +355,7 @@
                     android:text="Info Penerima"
                     android:textSize="12sp"
                     android:gravity="top"
+                    android:visibility="gone"
                     />
 
                 <LinearLayout
@@ -354,7 +367,8 @@
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:weightSum="100"
-                    android:layout_gravity="center">
+                    android:layout_gravity="center"
+                    android:visibility="gone">
 
                     <EditText
                         android:layout_width="0px"
@@ -870,7 +884,6 @@
             android:textAllCaps="false"
             android:textColor="@color/white"
             app:layout_constraintTop_toTopOf="parent"
-            android:enabled="false"
             app:backgroundTint="@color/biru"
             app:layout_constraintBottom_toBottomOf="parent"/>
 

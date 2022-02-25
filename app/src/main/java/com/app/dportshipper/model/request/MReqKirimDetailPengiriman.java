@@ -14,7 +14,7 @@ public class MReqKirimDetailPengiriman {
     MHead head;
     MPengirim pengirim;
     List<MPenerima> penerima = new ArrayList<>();
-    List<MListDataBarang> detail_barang= new ArrayList<>();
+    List<MBarang> detail_barang= new ArrayList<>();
 
     public MHead getHead() {
         return head;
@@ -40,11 +40,11 @@ public class MReqKirimDetailPengiriman {
         this.penerima = penerima;
     }
 
-    public List<MListDataBarang> getDetail_barang() {
+    public List<MBarang> getDetail_barang() {
         return detail_barang;
     }
 
-    public void setDetail_barang(List<MListDataBarang> detail_barang) {
+    public void setDetail_barang(List<MBarang> detail_barang) {
         this.detail_barang = detail_barang;
     }
 }

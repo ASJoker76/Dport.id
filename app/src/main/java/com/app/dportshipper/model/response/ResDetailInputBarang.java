@@ -2,7 +2,7 @@ package com.app.dportshipper.model.response;
 
 public class ResDetailInputBarang {
 
-    private String type_send;
+    private int type_send;
     private int type_service;
     private String tanggal;
     private String tanggal_to;
@@ -14,11 +14,11 @@ public class ResDetailInputBarang {
     private ResDataDetailInputBarang detail;
     private ResDataAlamatInputBarang alamat;
 
-    public String getType_send() {
+    public int getType_send() {
         return type_send;
     }
 
-    public void setType_send(String type_send) {
+    public void setType_send(int type_send) {
         this.type_send = type_send;
     }
 

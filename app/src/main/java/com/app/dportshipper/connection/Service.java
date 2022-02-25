@@ -9,6 +9,7 @@ import com.app.dportshipper.model.request.ReqDetailInputBarang;
 import com.app.dportshipper.model.request.ReqDetailTruck;
 import com.app.dportshipper.model.request.ReqDocumentProfile;
 import com.app.dportshipper.model.request.ReqEmail;
+import com.app.dportshipper.model.request.ReqFinalPembayaran;
 import com.app.dportshipper.model.request.ReqForgotPassword;
 import com.app.dportshipper.model.request.ReqGantiPasswordProfil;
 import com.app.dportshipper.model.request.ReqInputData;
@@ -349,4 +350,7 @@ public interface Service {
     @POST("api_v1/ShipperApi/checkGrantotal")
     Call<ResGrandTotal> checkGrantotal(@Header("Authorization") String authorization, @Body ReqTotal reqTotal);
 
+    //fianl
+    @POST("api_v1/ShipperApi/finalPembayaran")
+    Call<ResUtama> finalPembayaran(@Header("Authorization") String authorization, @Body ReqFinalPembayaran reqFinalPembayaran);
 }

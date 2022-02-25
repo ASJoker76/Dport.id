@@ -61,9 +61,15 @@ public class DetailGantiAlamatFragment extends Fragment implements AdapterAlamat
 
         loadsession();
         loadtable();
+        loadgantialamat();
         loadapi();
 
         return root;
+    }
+
+    private void loadgantialamat() {
+        binding.clTambahAlamat.setVisibility(View.GONE);
+        binding.btnSimpan.setVisibility(View.GONE);
     }
 
     private void loadtable() {
@@ -119,13 +125,32 @@ public class DetailGantiAlamatFragment extends Fragment implements AdapterAlamat
         String alamat = resDataAlamatPenerima.getAlamat();
         String nama_penerima = resDataAlamatPenerima.getNama_penerima();
         String no_tlp = resDataAlamatPenerima.getNo_hp();
+        String provisi = resDataAlamatPenerima.getProv();
+        String kabupaten = resDataAlamatPenerima.getKab();
+        String kecamatan = resDataAlamatPenerima.getKec();
+        String kelurahan = resDataAlamatPenerima.getKel();
+        int kodepos = resDataAlamatPenerima.getKode_pos();
+
+        SharedPreferences.Editor editor = getActivity().getBaseContext().getSharedPreferences("data_transporter", Context.MODE_PRIVATE).edit();
+        editor.putBoolean("loadalamat", true);
+        editor.putString("alamat", alamat);
+//        editor.putString("nama_penerima", nama_penerima);
+//        editor.putString("no_tlp", no_tlp);
+        editor.putString("provisi", provisi);
+        editor.putString("kabupaten", kabupaten);
+        editor.putString("kecamatan", kecamatan);
+        editor.putString("kelurahan", kelurahan);
+        editor.putInt("kodepos", kodepos);
+        editor.apply();
 
         Bundle bundle = new Bundle();
         bundle.putParcelableArrayList("listDataBarang", (ArrayList<? extends Parcelable>) listDataBarang);
         bundle.putParcelableArrayList("listDataAlamat", (ArrayList<? extends Parcelable>) listDataAlamat);
-        bundle.putString("alamat", alamat);
-        bundle.putString("nama_penerima", nama_penerima);
-        bundle.putString("no_tlp", no_tlp);
+//        bundle.putString("alamat", alamat);
+//        bundle.putString("nama_penerima", nama_penerima);
+//        bundle.putString("no_tlp", no_tlp);
+
+
         BookingPengirimanFragment ringkasanPesananFragment = new BookingPengirimanFragment();
         ringkasanPesananFragment.setArguments(bundle);
         FragmentManager fragmentManager = (getActivity()).getSupportFragmentManager();

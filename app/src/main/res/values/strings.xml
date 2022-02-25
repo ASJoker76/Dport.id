@@ -33,6 +33,7 @@
     <string name="forgotpassword_akun">Lupa <b>Kata Sandi</b></string>
     <string name="ringkasan_pengiriman">Ringkasan <b>Pengiriman</b></string>
     <string name="detail_barang">Detail <b>Barang</b></string>
+    <string name="info_pengirim">Info <b>Pengirim</b></string>
     <string name="detail_alamat">Detail <b>Alamat</b></string>
     <string name="daftar_alamat">Daftar <b>Alamat</b></string>
     <string name="recipient_nama">Nama*</string>

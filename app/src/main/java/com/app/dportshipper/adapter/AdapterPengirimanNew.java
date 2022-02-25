@@ -62,6 +62,7 @@ public class AdapterPengirimanNew extends RecyclerView.Adapter<AdapterPengiriman
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 bundle.putInt("id_order",resBursaPengiriman.getId_order());
+                bundle.putString("status_pengiriman",resBursaPengiriman.getStatus_pengiriman());
                 DetailPengirimanFragment fragementIntent = new DetailPengirimanFragment();
                 FragmentManager manager = myFragment.getActivity().getSupportFragmentManager();
                 FragmentTransaction transaction = manager.beginTransaction();
