@@ -1,6 +1,9 @@
 package com.app.dportshipper.model.response;
 
-public class ResDetailPengirimanBarang {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class ResDetailPengirimanBarang implements Parcelable {
 
     private int id_order_barang;
     private int id_kategori_barang;
@@ -11,6 +14,29 @@ public class ResDetailPengirimanBarang {
     private int tinggi_barang;
     private String jenis_barang;
 
+
+    protected ResDetailPengirimanBarang(Parcel in) {
+        id_order_barang = in.readInt();
+        id_kategori_barang = in.readInt();
+        kuantitas_barang = in.readInt();
+        bobot_barang = in.readInt();
+        panjang_barang = in.readInt();
+        lebar_barang = in.readInt();
+        tinggi_barang = in.readInt();
+        jenis_barang = in.readString();
+    }
+
+    public static final Creator<ResDetailPengirimanBarang> CREATOR = new Creator<ResDetailPengirimanBarang>() {
+        @Override
+        public ResDetailPengirimanBarang createFromParcel(Parcel in) {
+            return new ResDetailPengirimanBarang(in);
+        }
+
+        @Override
+        public ResDetailPengirimanBarang[] newArray(int size) {
+            return new ResDetailPengirimanBarang[size];
+        }
+    };
 
     public int getId_order_barang() {
         return id_order_barang;
@@ -74,5 +100,22 @@ public class ResDetailPengirimanBarang {
 
     public void setJenis_barang(String jenis_barang) {
         this.jenis_barang = jenis_barang;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id_order_barang);
+        dest.writeInt(id_kategori_barang);
+        dest.writeInt(kuantitas_barang);
+        dest.writeInt(bobot_barang);
+        dest.writeInt(panjang_barang);
+        dest.writeInt(lebar_barang);
+        dest.writeInt(tinggi_barang);
+        dest.writeString(jenis_barang);
     }
 }

@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +32,8 @@ import com.app.dportshipper.model.request.ReqBursaPengiriman;
 import com.app.dportshipper.model.request.ReqFinalPembayaran;
 import com.app.dportshipper.model.request.ReqKonfirmasiSelesai;
 import com.app.dportshipper.model.response.MSukses;
+import com.app.dportshipper.model.response.ResDataFotoBongkarBarang;
+import com.app.dportshipper.model.response.ResDataFotoMuatBarang;
 import com.app.dportshipper.model.response.ResDetailPengiriman;
 import com.app.dportshipper.model.response.ResDetailPengirimanBarang;
 import com.app.dportshipper.model.response.ResDetailPengirimanIsi;
@@ -43,6 +46,7 @@ import com.kaopiz.kprogresshud.KProgressHUD;
 
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -63,6 +67,8 @@ public class DetailPengirimanFragment extends Fragment {
     private ResDetailPengirimanIsi resDetails;
     private String status_pengiriman;
     private DialogSuratWebviewBinding bindingDialog;
+    private List<ResDataFotoBongkarBarang> resBongkar;
+    private List<ResDataFotoMuatBarang> resMuat;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -96,14 +102,38 @@ public class DetailPengirimanFragment extends Fragment {
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
                 bundle.putInt("id_order", id_order);
-                bundle.putString("jenis", resDetailBarangs.get(0).getJenis_barang() + "d");
-                bundle.putInt("berat", resDetailBarangs.get(0).getBobot_barang());
-                bundle.putInt("jumlah", resDetailBarangs.get(0).getKuantitas_barang());
-                bundle.putString("dimensi", resDetailBarangs.get(0).getPanjang_barang() + "cm x " + resDetailBarangs.get(0).getLebar_barang() + "cm x " + resDetailBarangs.get(0).getTinggi_barang() + "cm");
-                bundle.putString("muatan", resDetails.getCapacity() + "");
-                bundle.putString("nilai_barang", resDetails.getHarga() + "");
-                bundle.putString("catatan", resDetails.getCatatan());
+                bundle.putParcelableArrayList("listBarang", (ArrayList<? extends Parcelable>) resDetailBarangs);
                 DetailBarangFragment fragementIntent = new DetailBarangFragment();
+                FragmentManager manager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                transaction.replace(R.id.nav_host_fragment, fragementIntent);
+                fragementIntent.setArguments(bundle);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+        binding.lyBongkar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putInt("id_order", id_order);
+                bundle.putParcelableArrayList("listBongkar", (ArrayList<? extends Parcelable>) resBongkar);
+                DetailBongkarFragment fragementIntent = new DetailBongkarFragment();
+                FragmentManager manager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                transaction.replace(R.id.nav_host_fragment, fragementIntent);
+                fragementIntent.setArguments(bundle);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+        binding.lyMuat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putInt("id_order", id_order);
+                bundle.putParcelableArrayList("listMuat", (ArrayList<? extends Parcelable>) resMuat);
+                DetailMuatFragment fragementIntent = new DetailMuatFragment();
                 FragmentManager manager = getActivity().getSupportFragmentManager();
                 FragmentTransaction transaction = manager.beginTransaction();
                 transaction.replace(R.id.nav_host_fragment, fragementIntent);
@@ -285,7 +315,7 @@ public class DetailPengirimanFragment extends Fragment {
         Bundle bundle = this.getArguments();
         if (bundle != null) {
             id_order = bundle.getInt("id_order");
-            status_pengiriman = bundle.getString("status_pengiriman");
+            //status_pengiriman = bundle.getString("status_pengiriman");
         }
     }
 
@@ -344,6 +374,8 @@ public class DetailPengirimanFragment extends Fragment {
 
                     resDetailBarangs = resDetailRingkasan.getDetail_barang();
                     resDetails = resDetailRingkasan.getDetail();
+                    resBongkar = resDetailRingkasan.getFoto_bongkar_barang();
+                    resMuat = resDetailRingkasan.getFoto_muat_barang();
                 }
             }
 
@@ -368,14 +400,14 @@ public class DetailPengirimanFragment extends Fragment {
             binding.cvEKontrak.setVisibility(View.VISIBLE);
             if (detail.getJml_bayar() == detail.getTotal_harga()) {
                 //buttton false
-                binding.btnStatusPengiriman.setText("Bayar");
+                binding.btnStatusPengiriman.setText("Menunggu Pickup");
                 binding.btnStatusPengiriman.setEnabled(false);
                 //binding.btnPembayaran.setBackgroundColor(getResources().getColor(R.color.background_text_color));
                 binding.btnStatusPengiriman.setBackgroundTintList(ContextCompat.getColorStateList(getActivity(), R.color.background_text_color));
             }
             else if (detail.getJml_bayar() != detail.getTotal_harga()) {
                 //button aktif
-                binding.btnStatusPengiriman.setText("Bayar");
+                binding.btnStatusPengiriman.setText("Menunggu Pickup");
                 binding.btnStatusPengiriman.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -405,6 +437,8 @@ public class DetailPengirimanFragment extends Fragment {
                 });
 
             }
+            binding.tvInformasiDriver.setVisibility(View.VISIBLE);
+            binding.lyInformasiDriver.setVisibility(View.VISIBLE);
         }
         else if (detail.getStatus() == 12) {
             if (detail.getJml_bayar() == detail.getTotal_harga()) {
@@ -521,6 +555,8 @@ public class DetailPengirimanFragment extends Fragment {
             binding.cvEKontrak.setVisibility(View.VISIBLE);
             binding.cvSuratJalan.setVisibility(View.VISIBLE);
             binding.cvInvoice.setVisibility(View.VISIBLE);
+            binding.tvInformasiDriver.setVisibility(View.VISIBLE);
+            binding.lyInformasiDriver.setVisibility(View.VISIBLE);
         } else if (detail.getStatus() == 14) {
             if (detail.getJml_bayar() == detail.getTotal_harga()) {
                 //buttton false

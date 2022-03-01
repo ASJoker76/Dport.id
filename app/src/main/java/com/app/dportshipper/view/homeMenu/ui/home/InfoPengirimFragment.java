@@ -30,6 +30,8 @@ public class InfoPengirimFragment extends Fragment {
 
     private ArrayList<MListDataBarang> listDataBarang;
     private ArrayList<MAlamatPenerima> listDataAlamat;
+    private String nama_penerima;
+    private String no_tlp;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,9 +53,34 @@ public class InfoPengirimFragment extends Fragment {
                 validasi();
             }
         });
+
+        binding.llBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putParcelableArrayList("listDataBarang", (ArrayList<? extends Parcelable>) listDataBarang);
+                bundle.putParcelableArrayList("listDataAlamat", (ArrayList<? extends Parcelable>) listDataAlamat);
+                BookingPengirimanFragment fragementIntent = new BookingPengirimanFragment();
+                FragmentManager manager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                transaction.replace(R.id.nav_host_fragment, fragementIntent);
+                fragementIntent.setArguments(bundle);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
     }
 
     private void loadsession() {
+        SharedPreferences prefs_data_transporter = getActivity().getBaseContext().getSharedPreferences("data_transporter", Context.MODE_PRIVATE);
+        nama_penerima = prefs_data_transporter.getString("nama_penerima", "");
+        no_tlp = prefs_data_transporter.getString("no_tlp", "");
+
+        if(nama_penerima!=null||no_tlp!=null){
+            binding.etNama.setText(nama_penerima+"");
+            binding.etNoTlp.setText(no_tlp+"");
+        }
+
         Bundle bundle = this.getArguments();
         if (bundle != null) {
             listDataBarang = bundle.getParcelableArrayList("listDataBarang");

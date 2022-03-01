@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Parcelable;
@@ -125,6 +126,21 @@ public class DetailBarangFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 validasi();
+            }
+        });
+        binding.llBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putParcelableArrayList("listDataBarang", (ArrayList<? extends Parcelable>) listDataBarang);
+                bundle.putParcelableArrayList("listDataAlamat", (ArrayList<? extends Parcelable>) listDataAlamat);
+                BookingPengirimanFragment fragementIntent = new BookingPengirimanFragment();
+                FragmentManager manager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                transaction.replace(R.id.nav_host_fragment, fragementIntent);
+                fragementIntent.setArguments(bundle);
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
     }

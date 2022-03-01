@@ -1,11 +1,34 @@
 package com.app.dportshipper.model.response;
 
-public class ResDataFotoBongkarBarang {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class ResDataFotoBongkarBarang implements Parcelable {
     private int id;
     private String image;
     private String tanggal;
     private String jam;
     private String description;
+
+    protected ResDataFotoBongkarBarang(Parcel in) {
+        id = in.readInt();
+        image = in.readString();
+        tanggal = in.readString();
+        jam = in.readString();
+        description = in.readString();
+    }
+
+    public static final Creator<ResDataFotoBongkarBarang> CREATOR = new Creator<ResDataFotoBongkarBarang>() {
+        @Override
+        public ResDataFotoBongkarBarang createFromParcel(Parcel in) {
+            return new ResDataFotoBongkarBarang(in);
+        }
+
+        @Override
+        public ResDataFotoBongkarBarang[] newArray(int size) {
+            return new ResDataFotoBongkarBarang[size];
+        }
+    };
 
     public int getId() {
         return id;
@@ -45,5 +68,19 @@ public class ResDataFotoBongkarBarang {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(image);
+        dest.writeString(tanggal);
+        dest.writeString(jam);
+        dest.writeString(description);
     }
 }

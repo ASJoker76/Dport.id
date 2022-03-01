@@ -47,7 +47,7 @@ public class AdapterAlamatPengirim extends RecyclerView.Adapter<AdapterAlamatPen
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ResDataAlamatPenerima resMAlamatPenerima = dataPengiriman.get(position);
         holder.viewBinding.tvNama.setText(resMAlamatPenerima.getNama_penerima());
-        holder.viewBinding.tvAlamat.setText(resMAlamatPenerima.getAlamat()+"\n\n"+resMAlamatPenerima.getNo_hp());
+        holder.viewBinding.tvAlamat.setText(resMAlamatPenerima.getAlamat()+".\n\n"+resMAlamatPenerima.getKel()+", "+resMAlamatPenerima.getKec()+", "+resMAlamatPenerima.getKab()+", "+resMAlamatPenerima.getProv()+" ("+resMAlamatPenerima.getKode_pos()+")");
         setAnimation(holder.itemView, position);
     }
 
@@ -76,6 +76,7 @@ public class AdapterAlamatPengirim extends RecyclerView.Adapter<AdapterAlamatPen
             viewBinding = binding;
             this.onKlikListener = onKlikListener;
             binding.clView.setOnClickListener(this);
+            binding.ivEdit.setOnClickListener(this);
         }
 
         @Override

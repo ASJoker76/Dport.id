@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.app.dportshipper.R;
@@ -23,6 +25,7 @@ import com.app.dportshipper.databinding.FragmentProfilBinding;
 import com.app.dportshipper.model.request.ReqLastPengiriman;
 import com.app.dportshipper.model.response.ResGetProfil;
 import com.app.dportshipper.model.response.ResLastPengiriman;
+import com.app.dportshipper.view.homeMenu.ui.home.DetailGantiAlamatFragment;
 import com.app.dportshipper.view.login.LoginActivity;
 import com.bumptech.glide.Glide;
 
@@ -37,15 +40,9 @@ import retrofit2.Response;
 public class ProfileFragment extends Fragment {
 
     private List<ResLastPengiriman> listPengiriman;
-
-//    private TextView txtNamaShipper, lblDalamPengiriman;
-//    private RecyclerView rvDalamPengiriman;
-    //private DalamPengirimanAdapter adapter;
     String username, token, email, nama, notlp, alamat, namapic, noktppic, emailpic, kontakpic,
             alamatpic;
     private LinearLayout llAkun, llKataSandi, llDokumen, llPic, llLogout;
-//    private ImageView ivEditProfil;
-//    private CircleImageView civProfilShipper;
     String foto;
     private int id_shipper;
     private FragmentProfilBinding binding;
@@ -57,10 +54,7 @@ public class ProfileFragment extends Fragment {
         binding = FragmentProfilBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-//        txtNamaShipper = root.findViewById(R.id.txt_name_shipper_profile);
-//        civProfilShipper = root.findViewById(R.id.civ_profile);
-//        rvDalamPengiriman = root.findViewById(R.id.rv_dalam_pengiriman);
-        //lblDalamPengiriman = root.findViewById(R.id.lbl_dalam_pengiriman);
+
         inisiasi();
         onloadsession();
         getdataprofile();
@@ -90,30 +84,15 @@ public class ProfileFragment extends Fragment {
 //                ft.commit();
 //            }
 //        });
-        llAkun = root.findViewById(R.id.ll_akun);
-        llAkun.setOnClickListener(new View.OnClickListener() {
+        binding.llAkun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-//                Bundle bundle = new Bundle();
-//                bundle.putString("nama", nama);
-//                bundle.putString("email", email);
-//                bundle.putString("notlp", notlp);
-//                bundle.putString("alamat", alamat);
-//                bundle.putString("foto", foto);
-//                bundle.putInt("id_shipper", id_shipper);
-//                bundle.putString("namapic", namapic);
-//                bundle.putString("noktppic", noktppic);
-//                bundle.putString("emailpic", emailpic);
-//                bundle.putString("kontakpic", kontakpic);
-//                bundle.putString("alamatpic", alamatpic);
-//
-//                EditProfileFragment inbound = new EditProfileFragment();
-//                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-//                ft.replace(R.id.nav_host_fragment, inbound);
-//                inbound.setArguments(bundle);
-//                ft.commit();
-
+                DaftarAlamatSayaFragment fragementIntent = new DaftarAlamatSayaFragment();
+                FragmentManager manager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                transaction.replace(R.id.nav_host_fragment, fragementIntent);
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
 
@@ -121,11 +100,12 @@ public class ProfileFragment extends Fragment {
         llKataSandi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Fragment fragment = null;
-//                EditKataSandiFragment inbound = new EditKataSandiFragment();
-//                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-//                ft.replace(R.id.nav_host_fragment, inbound);
-//                ft.commit();
+                KataSandiFragment fragementIntent = new KataSandiFragment();
+                FragmentManager manager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                transaction.replace(R.id.nav_host_fragment, fragementIntent);
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
 

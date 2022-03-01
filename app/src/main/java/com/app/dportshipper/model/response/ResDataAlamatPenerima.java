@@ -2,6 +2,8 @@ package com.app.dportshipper.model.response;
 
 public class ResDataAlamatPenerima {
 
+    private int id_alamat_shipper;
+    private String kd_alamat_shipper;
     private int id_penerima;
     private int id_order;
     private int  id_shipper;
@@ -21,6 +23,31 @@ public class ResDataAlamatPenerima {
     private String updated_at;
     private int create_by;
     private int update_by;
+    private int flag;
+
+    public int getFlag() {
+        return flag;
+    }
+
+    public void setFlag(int flag) {
+        this.flag = flag;
+    }
+
+    public int getId_alamat_shipper() {
+        return id_alamat_shipper;
+    }
+
+    public void setId_alamat_shipper(int id_alamat_shipper) {
+        this.id_alamat_shipper = id_alamat_shipper;
+    }
+
+    public String getKd_alamat_shipper() {
+        return kd_alamat_shipper;
+    }
+
+    public void setKd_alamat_shipper(String kd_alamat_shipper) {
+        this.kd_alamat_shipper = kd_alamat_shipper;
+    }
 
     public int getId_penerima() {
         return id_penerima;

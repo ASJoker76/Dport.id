@@ -1,0 +1,275 @@
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="40"
+                android:gravity="top"
+                android:text="Jenis Barang  "
+                android:textAppearance="@style/recipient_s"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:gravity="top"
+                android:text=":"
+                android:textAppearance="@style/recipient_s" />
+
+            <TextView
+                android:id="@+id/tv_jenis_barang"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:gravity="right"
+                android:textAppearance="@style/recipient_s"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="40"
+                android:gravity="top"
+                android:text="Berat Barang  "
+                android:textAppearance="@style/recipient_s"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:gravity="top"
+                android:text=":"
+                android:textAppearance="@style/recipient_s" />
+
+            <TextView
+                android:id="@+id/tv_berat_barang"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:gravity="right"
+                android:textAppearance="@style/recipient_s"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="40"
+                android:gravity="top"
+                android:text="Jumlah Barang  "
+                android:textAppearance="@style/recipient_s"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:gravity="top"
+                android:text=":"
+                android:textAppearance="@style/recipient_s" />
+
+            <TextView
+                android:id="@+id/tv_jumlah_barang"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:gravity="right"
+                android:textAppearance="@style/recipient_s"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="40"
+                android:gravity="top"
+                android:text="Dimensi  "
+                android:textAppearance="@style/recipient_s"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:gravity="top"
+                android:text=":"
+                android:textAppearance="@style/recipient_s" />
+
+            <TextView
+                android:id="@+id/tv_dimensi"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:gravity="right"
+                android:textAppearance="@style/recipient_s"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="40"
+                android:gravity="top"
+                android:text="Muatan  "
+                android:textAppearance="@style/recipient_s"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:gravity="top"
+                android:text=":"
+                android:textAppearance="@style/recipient_s" />
+
+            <TextView
+                android:id="@+id/tv_muatan"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:gravity="right"
+                android:textAppearance="@style/recipient_s"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="40"
+                android:gravity="top"
+                android:text="Nilai Barang  "
+                android:textAppearance="@style/recipient_s"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:gravity="top"
+                android:text=":"
+                android:textAppearance="@style/recipient_s" />
+
+            <TextView
+                android:id="@+id/tv_nilai_barang"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:gravity="right"
+                android:textAppearance="@style/recipient_s"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="40"
+                android:gravity="top"
+                android:text="Catatan  "
+                android:textAppearance="@style/recipient_s"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:gravity="top"
+                android:text=":"
+                android:textAppearance="@style/recipient_s" />
+
+            <TextView
+                android:id="@+id/tv_catatan"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:gravity="right"
+                android:textAppearance="@style/recipient_s"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

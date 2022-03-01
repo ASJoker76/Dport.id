@@ -7,21 +7,34 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.OvershootInterpolator;
 
 import com.app.dportshipper.R;
+import com.app.dportshipper.adapter.AdapterBarangDetail;
+import com.app.dportshipper.adapter.AdapterBongkar;
 import com.app.dportshipper.connection.API;
 import com.app.dportshipper.databinding.ActivityChangePasswordBinding;
 import com.app.dportshipper.databinding.FragmentDetailBarangBinding;
 import com.app.dportshipper.databinding.FragmentDetailPengirimanBinding;
 import com.app.dportshipper.model.request.ReqBursaPengiriman;
 import com.app.dportshipper.model.response.ResDetailPengiriman;
+import com.app.dportshipper.model.response.ResDetailPengirimanBarang;
+import com.app.dportshipper.utils.GridSpacingItemDecoration;
 import com.google.gson.Gson;
+import com.ramotion.cardslider.CardSliderLayoutManager;
+import com.ramotion.cardslider.CardSnapHelper;
 
+import java.util.ArrayList;
+
+import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -31,6 +44,8 @@ public class DetailBarangFragment extends Fragment {
     private FragmentDetailBarangBinding binding;
     private int id_order;
     private String token;
+    private ArrayList<ResDetailPengirimanBarang> listBarang;
+    private AdapterBarangDetail adapterBarangDetail;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,9 +55,24 @@ public class DetailBarangFragment extends Fragment {
         View root = binding.getRoot();
 
         loadsession();
+        loadtable();
         onclick();
 
         return root;
+    }
+
+    private void loadtable() {
+        adapterBarangDetail = new AdapterBarangDetail(getActivity(), listBarang);
+        binding.rvDataBarang.setAdapter(new AlphaInAnimationAdapter(adapterBarangDetail));
+        binding.rvDataBarang.setLayoutManager(new GridLayoutManager(getActivity(), 1,GridLayoutManager.VERTICAL, false));
+        binding.rvDataBarang.addItemDecoration(new GridSpacingItemDecoration(2, 2,true,2));
+        LinearLayoutManager recyclerManager = ((LinearLayoutManager)binding.rvDataBarang.getLayoutManager());
+
+        AlphaInAnimationAdapter alphaInAnimationAdapter = new AlphaInAnimationAdapter (adapterBarangDetail);
+        alphaInAnimationAdapter.setDuration(1000);
+        alphaInAnimationAdapter.setInterpolator(new OvershootInterpolator());
+        alphaInAnimationAdapter.setFirstOnly(false);
+        adapterBarangDetail.notifyDataSetChanged();
     }
 
     private void onclick() {
@@ -69,21 +99,7 @@ public class DetailBarangFragment extends Fragment {
         Bundle bundle = this.getArguments();
         if (bundle != null) {
             id_order = bundle.getInt("id_order");
-            String jenis = bundle.getString("jenis");
-            int berat = bundle.getInt("berat");
-            int jumlah = bundle.getInt("jumlah");
-            String dimensi = bundle.getString("dimensi");
-            String muatan = bundle.getString("muatan");
-            String nilai_barang = bundle.getString("nilai_barang");
-            String catatan = bundle.getString("catatan");
-
-            binding.tvJenisBarang.setText(jenis);
-            binding.tvBeratBarang.setText(berat + "");
-            binding.tvJumlahBarang.setText(jumlah + "");
-            binding.tvDimensi.setText(dimensi);
-            binding.tvMuatan.setText(muatan);
-            binding.tvNilaiBarang.setText(nilai_barang);
-            binding.tvCatatan.setText(catatan);
+            listBarang = bundle.getParcelableArrayList("listBarang");
         }
     }
 }

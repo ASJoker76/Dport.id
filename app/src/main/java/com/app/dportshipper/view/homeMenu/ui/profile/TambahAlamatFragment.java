@@ -1,4 +1,4 @@
-package com.app.dportshipper.view.homeMenu.ui.home;
+package com.app.dportshipper.view.homeMenu.ui.profile;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -9,7 +9,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Parcelable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,15 +18,15 @@ import android.widget.ArrayAdapter;
 import com.app.dportshipper.R;
 import com.app.dportshipper.connection.API;
 import com.app.dportshipper.databinding.FragmentDetailAlamatBinding;
-import com.app.dportshipper.databinding.FragmentDetailBarang2Binding;
-import com.app.dportshipper.model.MAlamatPenerima;
-import com.app.dportshipper.model.MListDataBarang;
+import com.app.dportshipper.databinding.FragmentTambahAlamatBinding;
 import com.app.dportshipper.model.request.MReqProv;
+import com.app.dportshipper.model.request.ReqTambahAlamatProfil;
 import com.app.dportshipper.model.response.MResKab;
-import com.app.dportshipper.model.response.MResKategoriBarang;
 import com.app.dportshipper.model.response.MResKec;
 import com.app.dportshipper.model.response.MResKel;
 import com.app.dportshipper.model.response.MResProv;
+import com.app.dportshipper.model.response.ResUtama;
+import com.app.dportshipper.view.homeMenu.ui.home.BookingPengirimanFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,14 +36,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+public class TambahAlamatFragment extends Fragment {
 
-public class DetailAlamatFragment extends Fragment {
-
-
-    private FragmentDetailAlamatBinding binding;
-
-    private ArrayList<MListDataBarang> listDataBarang;
-    private ArrayList<MAlamatPenerima> listDataAlamat;
+    private FragmentTambahAlamatBinding binding;
 
     private List<MResProv> listDataProv = new ArrayList<>();
 
@@ -74,14 +68,13 @@ public class DetailAlamatFragment extends Fragment {
     private String penerimaKecamatan;
     private String penerimaKelurahan;
 
-
     private String token;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentDetailAlamatBinding.inflate(inflater, container, false);
+        binding = FragmentTambahAlamatBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         loadsession();
@@ -101,14 +94,10 @@ public class DetailAlamatFragment extends Fragment {
         binding.llBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle bundle = new Bundle();
-                bundle.putParcelableArrayList("listDataBarang", (ArrayList<? extends Parcelable>) listDataBarang);
-                bundle.putParcelableArrayList("listDataAlamat", (ArrayList<? extends Parcelable>) listDataAlamat);
-                BookingPengirimanFragment fragementIntent = new BookingPengirimanFragment();
+                DaftarAlamatSayaFragment fragementIntent = new DaftarAlamatSayaFragment();
                 FragmentManager manager = getActivity().getSupportFragmentManager();
                 FragmentTransaction transaction = manager.beginTransaction();
                 transaction.replace(R.id.nav_host_fragment, fragementIntent);
-                fragementIntent.setArguments(bundle);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -116,60 +105,60 @@ public class DetailAlamatFragment extends Fragment {
     }
 
     private void validasi() {
-        String getNama = binding.etNama.getText().toString();
-        String getNotel = binding.etNoTlp.getText().toString();
         String getAlamat = binding.etAlamat.getText().toString();
 
         // Check if all strings are null or not
-        if (getNama.equals("") || getNama.length()==0){
-            new SweetAlertDialog(getActivity(), SweetAlertDialog.WARNING_TYPE)
-                    .setTitleText("Mohon isi nama penerima")
-                    .show();
-        }else if (getNotel.equals("") || getNotel.length()==0){
-            new SweetAlertDialog(getActivity(), SweetAlertDialog.WARNING_TYPE)
-                    .setTitleText("Mohon isi nomor telepon penerima")
-                    .show();
-        }else if (getAlamat.equals("") || getAlamat.length() == 0){
+        if (getAlamat.equals("") || getAlamat.length() == 0){
             new SweetAlertDialog(getActivity(), SweetAlertDialog.WARNING_TYPE)
                     .setTitleText("Mohon isi alamat lengkap penerima")
                     .show();
         }
 
         else {
-            onloadProcess(getNama,getNotel,getAlamat);
+            onloadProcess(getAlamat);
         }
     }
 
-    private void onloadProcess(String getNama, String getNotel, String getAlamat) {
-        ArrayList<MAlamatPenerima> listDataAlamatNew = new ArrayList<>();
-        MAlamatPenerima mAlamatPenerima = new MAlamatPenerima();
-        mAlamatPenerima.setNamaPenerima(getNama);
-        mAlamatPenerima.setAlamat(getAlamat);
-        mAlamatPenerima.setKontakTlp(getNotel);
-        mAlamatPenerima.setProvinsi(valuePro);
-        mAlamatPenerima.setKabupaten(valueKab);
-        mAlamatPenerima.setKecamatan(valueKec);
-        mAlamatPenerima.setKelurahan(valueKel);
-        mAlamatPenerima.setKodepos(valueKodepos);
-        listDataAlamatNew.add(mAlamatPenerima);
+    private void onloadProcess(String getAlamat) {
+        ReqTambahAlamatProfil reqTambahAlamatProfil = new ReqTambahAlamatProfil();
+        reqTambahAlamatProfil.setAlamat(getAlamat);
+        reqTambahAlamatProfil.setProv(valuePro);
+        reqTambahAlamatProfil.setKab(valueKab);
+        reqTambahAlamatProfil.setKec(valueKec);
+        reqTambahAlamatProfil.setKel(valueKel);
+        reqTambahAlamatProfil.setKode_pos(valueKodepos);
+        reqTambahAlamatProfil.setFlag(1);
 
-        BookingPengirimanFragment ringkasanPesananFragment = new BookingPengirimanFragment();
-        Bundle bundle = new Bundle();
-
-        if (listDataAlamat!=null) {
-            for (MAlamatPenerima alamatList : listDataAlamatNew) {
-                listDataAlamat.add(alamatList);
+        Call<ResUtama> callTambahAlamat = API.service().tambahAlamatProfil(token, reqTambahAlamatProfil);
+        callTambahAlamat.enqueue(new Callback<ResUtama>() {
+            @Override
+            public void onResponse(Call<ResUtama> call, Response<ResUtama> response) {
+                new SweetAlertDialog(getActivity(), SweetAlertDialog.SUCCESS_TYPE)
+                        .setTitleText("Tambah Alamat Berhasil")
+                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+                                sDialog.dismissWithAnimation();
+                                pindahkedaftaralamat();
+                            }
+                        })
+                        .show();
             }
-            bundle.putParcelableArrayList("listDataAlamat", (ArrayList<? extends Parcelable>) listDataAlamat);
-        }
-        else{
-            bundle.putParcelableArrayList("listDataAlamat", (ArrayList<? extends Parcelable>) listDataAlamatNew);
-        }
-        bundle.putParcelableArrayList("listDataBarang", (ArrayList<? extends Parcelable>) listDataBarang);
-        ringkasanPesananFragment.setArguments(bundle);
-        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.nav_host_fragment, ringkasanPesananFragment);
-        ft.commit();
+
+            @Override
+            public void onFailure(Call<ResUtama> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
+    }
+
+    private void pindahkedaftaralamat() {
+        DaftarAlamatSayaFragment fragementIntent = new DaftarAlamatSayaFragment();
+        FragmentManager manager = getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.nav_host_fragment, fragementIntent);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
     private void loadspinner() {
@@ -408,11 +397,5 @@ public class DetailAlamatFragment extends Fragment {
     private void loadsession() {
         SharedPreferences prefs = getActivity().getBaseContext().getSharedPreferences("login", Context.MODE_PRIVATE);
         token   = prefs.getString("token","");
-
-        Bundle bundle = this.getArguments();
-        if (bundle != null) {
-            listDataBarang = bundle.getParcelableArrayList("listDataBarang");
-            listDataAlamat = bundle.getParcelableArrayList("listDataAlamat");
-        }
     }
 }

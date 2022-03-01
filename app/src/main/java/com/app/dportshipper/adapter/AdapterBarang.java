@@ -38,9 +38,6 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.ViewHolder
 
     public AdapterBarang(ArrayList<MListDataBarang> dataPengiriman) {
         this.dataPengiriman = dataPengiriman;
-        this.type_send = type_send;
-        this.type_service = type_service;
-        this.tanggal = tanggal;
     }
 
     @NonNull

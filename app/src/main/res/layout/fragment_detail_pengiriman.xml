@@ -718,14 +718,17 @@
                     android:background="@color/white" />
 
                 <TextView
+                    android:id="@+id/tv_informasi_driver"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="top"
                     android:text="Informasi Driver"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:visibility="gone"/>
 
                 <LinearLayout
+                    android:id="@+id/ly_informasi_driver"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
@@ -733,7 +736,8 @@
                     android:background="@drawable/kotak_putih4"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:weightSum="100">
+                    android:weightSum="100"
+                    android:visibility="gone">
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/iv_photo_driver"
@@ -801,6 +805,7 @@
                         android:textSize="12sp" />
 
                     <LinearLayout
+                        android:id="@+id/ly_muat"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
@@ -836,6 +841,7 @@
                         android:textSize="9sp" />
 
                     <LinearLayout
+                        android:id="@+id/ly_bongkar"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"

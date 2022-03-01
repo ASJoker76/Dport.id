@@ -65,7 +65,7 @@
                     android:layout_height="40dp"
                     android:layout_weight="70"
                     android:gravity="center"
-                    android:text="@string/detail_barang"
+                    android:text="@string/detail_muat"
                     android:textAppearance="@style/daftar_akun" />
 
                 <ImageView
@@ -91,13 +91,13 @@
                     android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Detail Barang"/>
+                    android:text="Detail Muat Barang"/>
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_data_barang"
-                    android:layout_height="match_parent"
+                    android:id="@+id/rv_bongkar"
                     android:layout_width="match_parent"
-                    tools:listitem="@layout/list_item_barang"/>
+                    android:layout_height="350dp"
+                    tools:listitem="@layout/list_bongkar_muat"/>
             </LinearLayout>
 
         </ScrollView>

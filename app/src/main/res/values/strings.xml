@@ -31,11 +31,16 @@
     <string name="daftar_akun">Daftar <b>Akun</b></string>
     <string name="masuk_akun">Masuk <b>Akun</b></string>
     <string name="forgotpassword_akun">Lupa <b>Kata Sandi</b></string>
+    <string name="ubah_katasandi">Ubah <b>Kata Sandi</b></string>
     <string name="ringkasan_pengiriman">Ringkasan <b>Pengiriman</b></string>
     <string name="detail_barang">Detail <b>Barang</b></string>
+    <string name="detail_bongkar">Detail <b>Bongkar</b></string>
+    <string name="detail_muat">Detail <b>Muat</b></string>
     <string name="info_pengirim">Info <b>Pengirim</b></string>
     <string name="detail_alamat">Detail <b>Alamat</b></string>
     <string name="daftar_alamat">Daftar <b>Alamat</b></string>
+    <string name="tambah_alamat">Tambah <b>Alamat</b></string>
+    <string name="update_alamat">Update <b>Alamat</b></string>
     <string name="recipient_nama">Nama*</string>
     <string name="recipient_email">Email*</string>
     <string name="recipient_email_handphone">Email/No. Handphone*</string>
@@ -48,7 +53,10 @@
     <string name="hint_email">Tulis alamat email anda</string>
     <string name="hint_handphone">Masukan No. HP anda</string>
     <string name="hint_katasandi">Isi kata sandi anda</string>
+    <string name="hint_katasandi_baru">Isi kata sandi baru anda</string>
+    <string name="hint_katasandi_lama">Isi kata sandi lama anda</string>
     <string name="hint_konfirmasi">Konfirmasi kata sandi anda</string>
+    <string name="hint_konfirmasi_baru">Konfirmasi kata sandi baru anda</string>
     <string name="hint_email_handphone">Tulis Email/No. Handphone</string>
     <string name="lupa_kata_sandi">Lupa Kata Sandi?</string>
     <string name="warning_email">Masukan Email anda untuk atur ulang kata sandi.</string>
