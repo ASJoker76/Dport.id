@@ -4,7 +4,7 @@ public class ResGetPic {
 
     private String nama_pic;
     private String email_pic;
-    private int notelp_pic;
+    private String notelp_pic;
     private String alamat_pic;
     private String provinsi_pic;
     private String kabupaten_pic;
@@ -29,11 +29,11 @@ public class ResGetPic {
         this.email_pic = email_pic;
     }
 
-    public int getNotelp_pic() {
+    public String getNotelp_pic() {
         return notelp_pic;
     }
 
-    public void setNotelp_pic(int notelp_pic) {
+    public void setNotelp_pic(String notelp_pic) {
         this.notelp_pic = notelp_pic;
     }
 

@@ -4,14 +4,14 @@ public class ReqPic {
 
     private String nama_pic;
     private String email_pic;
-    private int notelp_pic;
+    private String notelp_pic;
     private String alamat_pic;
     private String provinsi_pic;
     private String kabupaten_pic;
     private String kecamatan_pic;
     private String kelurahan_pic;
     private int kode_pos_pic;
-    private int noktp_pic;
+    private String noktp_pic;
 
     public String getNama_pic() {
         return nama_pic;
@@ -29,11 +29,11 @@ public class ReqPic {
         this.email_pic = email_pic;
     }
 
-    public int getNotelp_pic() {
+    public String getNotelp_pic() {
         return notelp_pic;
     }
 
-    public void setNotelp_pic(int notelp_pic) {
+    public void setNotelp_pic(String notelp_pic) {
         this.notelp_pic = notelp_pic;
     }
 
@@ -85,11 +85,11 @@ public class ReqPic {
         this.kode_pos_pic = kode_pos_pic;
     }
 
-    public int getNoktp_pic() {
+    public String getNoktp_pic() {
         return noktp_pic;
     }
 
-    public void setNoktp_pic(int noktp_pic) {
+    public void setNoktp_pic(String noktp_pic) {
         this.noktp_pic = noktp_pic;
     }
 }

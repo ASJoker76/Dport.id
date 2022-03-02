@@ -196,7 +196,7 @@ public interface Service {
     Call<ReqDocumentProfile> getDataDokumen(@Header("Authorization") String authorization);
 
     /* Get Profile Full */
-    @POST("api_v1/Api/getProfileShipper")
+    @POST("api_v1/ShipperApi/getProfileShipper")
     Call<ResGetProfileFull> getProfilFull(@Header("Authorization") String authorization);
 
     /* Get Dalam Pengiriman Profil */

@@ -24,14 +24,14 @@ public class ResGetProfileFull {
     private String nama_pic;
     private String jabatan_pic; //blm fix
     private String email_pic;
-    private int notelp_pic;
+    private String notelp_pic;
     private String alamat_pic;
     private String provinsi_pic; //blm fix
     private String kabupaten_pic; //blm fix
     private String kecamatan_pic; //blm fix
     private String kelurahan_pic; //blm fix
     private int kode_pos_pic; //blm fix
-    private int noktp_pic;
+    private String noktp_pic;
     private String ktp_pic_file_path;  //blm fix
     private String created_at;
     private String updated_at;  //blm fix
@@ -238,12 +238,8 @@ public class ResGetProfileFull {
         this.email_pic = email_pic;
     }
 
-    public int getNotelp_pic() {
+    public String getNotelp_pic() {
         return notelp_pic;
-    }
-
-    public void setNotelp_pic(int notelp_pic) {
-        this.notelp_pic = notelp_pic;
     }
 
     public String getAlamat_pic() {
@@ -294,11 +290,15 @@ public class ResGetProfileFull {
         this.kode_pos_pic = kode_pos_pic;
     }
 
-    public int getNoktp_pic() {
+    public void setNotelp_pic(String notelp_pic) {
+        this.notelp_pic = notelp_pic;
+    }
+
+    public String getNoktp_pic() {
         return noktp_pic;
     }
 
-    public void setNoktp_pic(int noktp_pic) {
+    public void setNoktp_pic(String noktp_pic) {
         this.noktp_pic = noktp_pic;
     }
 

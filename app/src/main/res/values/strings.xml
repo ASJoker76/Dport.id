@@ -40,6 +40,11 @@
     <string name="detail_alamat">Detail <b>Alamat</b></string>
     <string name="daftar_alamat">Daftar <b>Alamat</b></string>
     <string name="tambah_alamat">Tambah <b>Alamat</b></string>
+    <string name="dokument"><b>Dokument</b></string>
+    <string name="pic"><b>PIC</b></string>
+    <string name="edit_pic">Edit<b>PIC</b></string>
+    <string name="dokument_perijinan">Dokumen <b>Perijinan</b></string>
+    <string name="note">*Pilih salah satu tipe usaha anda karena akan berpengaruh pada sistem pembayaran dan jumlah pembayaran pajak</string>
     <string name="update_alamat">Update <b>Alamat</b></string>
     <string name="recipient_nama">Nama*</string>
     <string name="recipient_email">Email*</string>

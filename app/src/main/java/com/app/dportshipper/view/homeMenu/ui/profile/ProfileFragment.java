@@ -113,24 +113,12 @@ public class ProfileFragment extends Fragment {
         llDokumen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Bundle bundle = new Bundle();
-//                bundle.putString("nama", nama);
-//                bundle.putString("email", email);
-//                bundle.putString("notlp", notlp);
-//                bundle.putString("alamat", alamat);
-//                bundle.putString("foto", foto);
-//                bundle.putInt("id_shipper", id_shipper);
-//                bundle.putString("namapic", namapic);
-//                bundle.putString("noktppic", noktppic);
-//                bundle.putString("emailpic", emailpic);
-//                bundle.putString("kontakpic", kontakpic);
-//                bundle.putString("alamatpic", alamatpic);
-//
-//                EditInputDokumenProfileFragment inbound = new EditInputDokumenProfileFragment();
-//                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-//                ft.replace(R.id.nav_host_fragment, inbound);
-//                inbound.setArguments(bundle);
-//                ft.commit();
+                DokumentPerjanjianFragment fragementIntent = new DokumentPerjanjianFragment();
+                FragmentManager manager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                transaction.replace(R.id.nav_host_fragment, fragementIntent);
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
 
@@ -138,11 +126,15 @@ public class ProfileFragment extends Fragment {
         llPic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Fragment fragment = null;
-//                EditPicFragment inbound = new EditPicFragment();
-//                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-//                ft.replace(R.id.nav_host_fragment, inbound);
-//                ft.commit();
+                Bundle bundle = new Bundle();
+                bundle.putString("nama_perusahaan",nama);
+                PicFragment fragementIntent = new PicFragment();
+                FragmentManager manager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                transaction.replace(R.id.nav_host_fragment, fragementIntent);
+                fragementIntent.setArguments(bundle);
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
 
