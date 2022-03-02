@@ -35,10 +35,14 @@ import com.app.dportshipper.model.response.ResPencarian;
 import com.app.dportshipper.model.response.ResPencarianAuto;
 import com.app.dportshipper.utils.GridSpacingItemDecoration;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
 import retrofit2.Call;
@@ -226,16 +230,28 @@ public class BerandaFragment extends Fragment {
         });
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
+
     private void loadsession() {
         SharedPreferences prefs = getActivity().getBaseContext().getSharedPreferences("login", Context.MODE_PRIVATE);
         token   = prefs.getString("token","");
 
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-        LocalDateTime now = LocalDateTime.now();
+//        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+//        LocalDateTime now = LocalDateTime.now();
 
         //tanggal = dtf.format(now);
-        tanggal = "23/02/2022";
+        //tanggal = "23/02/2022";
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        tanggal = dateFormat.format(calendar.getTime());
+
+//        or
+        //SimpleDateFormat curFormater = new SimpleDateFormat("yyyy/MM/dd");
+//        Date c = Calendar.getInstance().getTime();
+//
+//        SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd", Locale.getDefault());
+//        String formattedDate = df.format(c);
+//        tanggal = formattedDate;
+
         type_service = 1;
         type_send = "Reguler";
     }
