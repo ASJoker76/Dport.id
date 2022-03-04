@@ -1,30 +1,20 @@
 package com.app.dportshipper.view.inputDataDiri;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.core.graphics.drawable.DrawableCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.app.dportshipper.R;
 import com.app.dportshipper.connection.API;
-import com.app.dportshipper.databinding.ActivityInputDataDiriBinding;
-import com.app.dportshipper.databinding.ActivityPinVerifikasiBinding;
+import com.app.dportshipper.databinding.ActivityInputDataDiriCompanyBinding;
 import com.app.dportshipper.model.request.ReqInputData;
 import com.app.dportshipper.model.response.ResGetProfileFull;
 import com.app.dportshipper.model.response.ResUtama;
 import com.app.dportshipper.view.homeMenu.HomeActivity;
-import com.app.dportshipper.view.login.LoginActivity;
 import com.kofigyan.stateprogressbar.StateProgressBar;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -32,9 +22,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class InputDataDiriActivity extends AppCompatActivity {
+public class InputDataDiriCompanyActivity extends AppCompatActivity {
 
-    private ActivityInputDataDiriBinding binding;
+    private ActivityInputDataDiriCompanyBinding binding;
     private Boolean status = false;
     private Boolean status2 = false;
     private Boolean status3 = false;
@@ -44,11 +34,22 @@ public class InputDataDiriActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityInputDataDiriBinding.inflate(getLayoutInflater());
+        binding = ActivityInputDataDiriCompanyBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         loadsession();
         loadidShipper();
+
+        binding.llBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(InputDataDiriCompanyActivity.this, TypeUsahaActivity.class);
+                intent.putExtra("username", username);
+                intent.putExtra("email", email);
+                finish();
+                startActivity(intent);
+            }
+        });
 
         binding.btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,7 +131,7 @@ public class InputDataDiriActivity extends AppCompatActivity {
 
     private void loadsession() {
 
-        SharedPreferences prefs = InputDataDiriActivity.this.getBaseContext().getSharedPreferences("login", Context.MODE_PRIVATE);
+        SharedPreferences prefs = InputDataDiriCompanyActivity.this.getBaseContext().getSharedPreferences("login", Context.MODE_PRIVATE);
         token = prefs.getString("token", "");
 
         username = getIntent().getStringExtra("username");
@@ -180,7 +181,7 @@ public class InputDataDiriActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResUtama> call, Response<ResUtama> response) {
                 if (response.code() == 200) {
-                    new SweetAlertDialog(InputDataDiriActivity.this, SweetAlertDialog.SUCCESS_TYPE)
+                    new SweetAlertDialog(InputDataDiriCompanyActivity.this, SweetAlertDialog.SUCCESS_TYPE)
                             .setTitleText("Input Data Berhasil")
                             .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                                 @Override
@@ -207,7 +208,7 @@ public class InputDataDiriActivity extends AppCompatActivity {
         editor.putString("username", username);
         editor.putString("email", email);
 
-        Intent intent = new Intent(InputDataDiriActivity.this, HomeActivity.class);
+        Intent intent = new Intent(InputDataDiriCompanyActivity.this, HomeActivity.class);
         finish();
         startActivity(intent);
 

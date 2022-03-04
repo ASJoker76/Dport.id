@@ -4,11 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/drawable/background_transparant.xml" value="0.20416666666666666" />
+        <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/drawable/garis_putus_putus.xml" value="0.20416666666666666" />
+        <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/drawable/garis_putus_putus_line.xml" value="0.20416666666666666" />
         <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/activity_change_password.xml" value="0.25" />
         <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/activity_forgot_password.xml" value="0.14673913043478262" />
+        <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/activity_input_data_diri.xml" value="0.12635869565217392" />
+        <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/activity_input_data_diri_company.xml" value="0.12635869565217392" />
+        <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/activity_input_data_diri_personal.xml" value="0.18811881188118812" />
         <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/activity_login_register.xml" value="0.14673913043478262" />
+        <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/activity_pin_verifikasi.xml" value="0.12635869565217392" />
         <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/activity_reset_password.xml" value="0.14673913043478262" />
+        <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/activity_type_usaha.xml" value="0.22" />
         <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/dialog_data_barang.xml" value="0.1286231884057971" />
+        <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/dialog_sortir.xml" value="0.37604166666666666" />
         <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/dialog_surat_webview.xml" value="0.14673913043478262" />
         <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/fragment_beranda.xml" value="0.25" />
         <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/fragment_booking_pengiriman.xml" value="0.25" />
@@ -21,7 +30,7 @@
         <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/fragment_detail_muat.xml" value="0.14673913043478262" />
         <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/fragment_detail_pengiriman.xml" value="0.25" />
         <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/fragment_detail_pengiriman_new.xml" value="0.22" />
-        <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/fragment_hasil_pencarian.xml" value="0.11775362318840579" />
+        <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/fragment_hasil_pencarian.xml" value="0.25" />
         <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/fragment_info_pengirim.xml" value="0.1286231884057971" />
         <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/fragment_kata_sandi.xml" value="0.42725880551301687" />
         <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/fragment_pengiriman.xml" value="0.12635869565217392" />
@@ -36,14 +45,6 @@
         <entry key="..\:/DPORT.id/dport_shipper_new_desain/app/src/main/res/layout/list_pengiriman_new.xml" value="0.12635869565217392" />
         <entry key="..\:/Users/aguss/Desktop/Dport.idv1NewDesain/shipperv1newdesain/app/src/main/res/layout/fragment_detail_barang.xml" value="0.33" />
         <entry key="..\:/Users/aguss/Desktop/Dport.idv1NewDesain/shipperv1newdesain/app/src/main/res/layout/fragment_detail_pengiriman.xml" value="0.28152492668621704" />
-        <entry key="..\:/java/Dport.id/app/src/main/res/layout/fragment_detail_ganti_alamat.xml" value="0.15806159420289856" />
-        <entry key="..\:/java/Dport.id/app/src/main/res/layout/fragment_dokument_perjanjian.xml" value="0.25" />
-        <entry key="..\:/java/Dport.id/app/src/main/res/layout/fragment_edit_foto_dokument.xml" value="0.1859375" />
-        <entry key="..\:/java/Dport.id/app/src/main/res/layout/fragment_edit_pic.xml" value="0.19429347826086957" />
-        <entry key="..\:/java/Dport.id/app/src/main/res/layout/fragment_pic.xml" value="0.19429347826086957" />
-        <entry key="..\:/java/Dport.id/app/src/main/res/layout/fragment_profil.xml" value="0.1105072463768116" />
-        <entry key="..\:/java/Dport.id/app/src/main/res/layout/fragment_tambah_alamat.xml" value="0.1105072463768116" />
-        <entry key="..\:/java/Dport.id/app/src/main/res/layout/list_alamat_pengirim.xml" value="0.1105072463768116" />
       </map>
     </option>
   </component>

@@ -107,8 +107,8 @@ public class BerandaFragment extends Fragment {
         @Override
         protected String doInBackground(Void... params) {
             // doInBackground() adalah tempat kita melakukan proses di thread lain
-            loadapirekomendasitransporter();
-
+//            loadapirekomendasitransporter();
+//            loadapiautocomplite();
             return null;
         }
 
@@ -117,7 +117,7 @@ public class BerandaFragment extends Fragment {
         protected void onPostExecute(String result) {
             // onPostExecute akan dieksekusi setelah doInBackground selesai dieksekusi
             loadapiautocomplite();
-            loadapipengirimanfavorite("Bandung","Kepulauan Seribu");
+//            loadapipengirimanfavorite("Bandung","Kepulauan Seribu");
         }
     }
 

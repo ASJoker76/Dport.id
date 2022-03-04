@@ -40,6 +40,7 @@
     <string name="detail_alamat">Detail <b>Alamat</b></string>
     <string name="daftar_alamat">Daftar <b>Alamat</b></string>
     <string name="tambah_alamat">Tambah <b>Alamat</b></string>
+    <string name="type_usaha">Pilih Tipe <b>Usaha</b></string>
     <string name="dokument"><b>Dokument</b></string>
     <string name="pic"><b>PIC</b></string>
     <string name="edit_pic">Edit<b>PIC</b></string>

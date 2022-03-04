@@ -237,7 +237,9 @@
                     android:layout_marginLeft="5dp"
                     android:focusableInTouchMode="false"
                     android:textStyle="italic"
-                    android:hint="Semua Tipe"                     android:inputType="none"
+                    android:hint="FTL"
+                    android:focusable="false"
+                    android:inputType="none"
                     android:textColor="@color/black"
                     android:textSize="10sp" />
 
@@ -263,17 +265,18 @@
                     android:layout_marginLeft="5dp"/>
 
                 <EditText
+                    android:id="@+id/et_filter"
                     android:layout_width="0px"
                     android:layout_height="40dp"
                     android:layout_weight="90"
                     android:background="#FFFFFF"
-                    android:clickable="false"
                     android:layout_gravity="center"
                     android:cursorVisible="false"
                     android:layout_marginLeft="5dp"
                     android:focusableInTouchMode="false"
                     android:textStyle="italic"
                     android:hint="Sortir"
+                    android:focusable="false"
                     android:inputType="none"
                     android:layout_marginRight="5dp"
                     android:textColor="@color/black"

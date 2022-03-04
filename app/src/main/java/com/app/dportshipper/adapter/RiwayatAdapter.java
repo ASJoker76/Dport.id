@@ -20,6 +20,7 @@ import com.app.dportshipper.databinding.ListPengirimanNewBinding;
 import com.app.dportshipper.model.response.MResListPengiriman;
 import com.app.dportshipper.model.response.ResBursaPengiriman;
 //import com.app.dportshipper.view.homeMenu.ui.home.DetailRingkasanOrder;
+import com.app.dportshipper.view.homeMenu.ui.pengiriman.DetailPengirimanFragment;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
@@ -59,6 +60,19 @@ public class RiwayatAdapter extends RecyclerView.Adapter<RiwayatAdapter.ViewHold
                 .centerCrop()
                 .placeholder(R.drawable.image)
                 .into(viewBinding.ivTransporterRekomendasi);
+        holder.viewBinding.clView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putInt("id_order",resBursaPengiriman.getId_order());
+                DetailPengirimanFragment fragementIntent = new DetailPengirimanFragment();
+                FragmentManager manager = myFragment.getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                transaction.replace(R.id.nav_host_fragment, fragementIntent);
+                fragementIntent.setArguments(bundle);
+                transaction.commit();
+            }
+        });
         setAnimation(holder.itemView, position);
     }
 

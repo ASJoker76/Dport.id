@@ -16,7 +16,8 @@ import com.app.dportshipper.model.request.ReqLoginShipper;
 import com.app.dportshipper.model.response.ResLoginShipper;
 import com.app.dportshipper.utils.SharedPrefManager;
 import com.app.dportshipper.view.homeMenu.HomeActivity;
-import com.app.dportshipper.view.inputDataDiri.InputDataDiriActivity;
+import com.app.dportshipper.view.inputDataDiri.InputDataDiriCompanyActivity;
+import com.app.dportshipper.view.inputDataDiri.TypeUsahaActivity;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
@@ -134,7 +135,7 @@ public class LoginActivity extends AppCompatActivity {
                         SharedPreferences.Editor editor = getBaseContext().getSharedPreferences("login", Context.MODE_PRIVATE).edit();
                         editor.putString("token", resLogin.getToken());
                         editor.apply();
-                        Intent intent = new Intent(LoginActivity.this, InputDataDiriActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, TypeUsahaActivity.class);
                         intent.putExtra("username", resLogin.getUsername());
                         intent.putExtra("email", resLogin.getEmail());
                         finish();

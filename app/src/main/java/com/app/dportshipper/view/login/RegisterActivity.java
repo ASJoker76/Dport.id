@@ -180,7 +180,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void pindahkeotp() {
 
         Intent intent = new Intent(RegisterActivity.this, PinVerifikasiActivity.class);
-        intent.putExtra("email",etEmail.getText().toString());
+        intent.putExtra("email",binding.etEmailRegShipper.getText().toString());
         finish();
         startActivity(intent);
 

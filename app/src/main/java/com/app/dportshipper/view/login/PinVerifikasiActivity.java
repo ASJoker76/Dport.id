@@ -3,30 +3,18 @@ package com.app.dportshipper.view.login;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.app.dportshipper.R;
 import com.app.dportshipper.connection.API;
-import com.app.dportshipper.databinding.ActivityForgotPasswordBinding;
 import com.app.dportshipper.databinding.ActivityPinVerifikasiBinding;
 import com.app.dportshipper.model.request.ReqKirimUlang;
 import com.app.dportshipper.model.request.ReqValidateCode;
 import com.app.dportshipper.model.response.ResKirimUlang;
 import com.app.dportshipper.model.response.ResValidateCode;
-import com.app.dportshipper.view.inputDataDiri.InputDataDiriActivity;
-import com.chaos.view.PinView;
-import com.google.android.material.button.MaterialButton;
-
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.TimeUnit;
+import com.app.dportshipper.view.inputDataDiri.InputDataDiriCompanyActivity;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
@@ -133,7 +121,7 @@ public class PinVerifikasiActivity extends AppCompatActivity {
             public void onResponse(Call<ResValidateCode> call, Response<ResValidateCode> response) {
                 Log.d("agus", response.code() + "");
                 if (response.code() == 200) {
-                    Intent intent = new Intent(PinVerifikasiActivity.this, InputDataDiriActivity.class);
+                    Intent intent = new Intent(PinVerifikasiActivity.this, InputDataDiriCompanyActivity.class);
                     intent.putExtra("username", username);
                     intent.putExtra("email", email);
                     startActivity(intent);
